@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, follow" />
+  <title>Privacy Policy – rheysoft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:        #0a0d13;
+      --surface:   #111520;
+      --border:    #1e2535;
+      --text:      #dde1ec;
+      --muted:     #7a8099;
+      --accent:    #4fc3f7;
+      --accent2:   #00d4aa;
+      --warn:      #f59e0b;
+      --ok:        #22c55e;
+      --mono:      'JetBrains Mono', monospace;
+      --serif:     'Source Serif 4', Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { background: var(--bg); color: var(--text); font-family: var(--serif); font-weight: 300; font-size: 1rem; line-height: 1.75; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(10, 13, 19, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-brand { font-family: var(--mono); font-size: 0.875rem; font-weight: 600; color: var(--accent); text-decoration: none; letter-spacing: 0.05em; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    main { max-width: 760px; margin: 0 auto; padding: 3.5rem 2rem 6rem; }
+
+    .page-header { margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .page-header .label { font-family: var(--mono); font-size: 0.7rem; color: var(--accent2); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .page-header h1 { font-size: 2rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
+    .page-header .meta { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+
+    /* Store badge row */
+    .store-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 2rem; }
+    .badge { font-family: var(--mono); font-size: 0.68rem; padding: 0.25rem 0.6rem; border-radius: 4px; letter-spacing: 0.06em; border: 1px solid var(--border); color: var(--muted); }
+    .badge.valid { border-color: rgba(34,197,94,0.4); color: var(--ok); background: rgba(34,197,94,0.06); }
+
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; font-size: 0.875rem; }
+    .toc-title { font-family: var(--mono); font-size: 0.7rem; color: var(--accent2); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .toc ol { margin-left: 1.25rem; }
+    .toc li { margin-bottom: 0.25rem; }
+    .toc a { color: var(--accent); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    section { margin-bottom: 2.5rem; scroll-margin-top: 70px; }
+    h2 { font-family: var(--mono); font-size: 0.8rem; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+    h2::before { content: ''; display: inline-block; width: 3px; height: 1em; background: var(--accent); border-radius: 2px; }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-top: 1.25rem; margin-bottom: 0.4rem; }
+    p { margin-bottom: 0.75rem; }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { margin: 0.5rem 0 0.75rem 1.5rem; }
+    li { margin-bottom: 0.2rem; }
+
+    .data-block { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.25rem; font-size: 0.875rem; margin: 0.75rem 0; }
+    .data-block strong { color: var(--accent2); font-weight: 600; }
+
+    .ok-box { background: rgba(34, 197, 94, 0.07); border: 1px solid rgba(34, 197, 94, 0.25); border-radius: 6px; padding: 0.9rem 1.25rem; font-size: 0.9rem; }
+    .ok-box .ok-label { font-family: var(--mono); font-size: 0.7rem; color: var(--ok); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; font-weight: 600; }
+
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.75rem; }
+    .right-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.9rem 1rem; }
+    .right-card .art { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.08em; }
+    .right-card .name { font-weight: 600; font-size: 0.9rem; color: var(--text); margin: 0.1rem 0 0.25rem; }
+    .right-card p { font-size: 0.8rem; color: var(--muted); margin: 0; line-height: 1.5; }
+
+    hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+    footer { border-top: 1px solid var(--border); padding: 1.25rem 2rem; text-align: center; font-family: var(--mono); font-size: 0.7rem; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      main { padding: 2rem 1.25rem 4rem; }
+      nav { padding: 0 1.25rem; }
+      .page-header h1 { font-size: 1.5rem; }
+      .rights-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">rheysoft</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="datenschutz.html">Datenschutz</a></li>
+    <li><a href="privacy.html" class="active">Privacy</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <div class="page-header">
+    <div class="label">GDPR Art. 13 · Privacy Policy</div>
+    <h1>Privacy Policy</h1>
+    <div class="meta">Last updated: April 2026 · Applies to: rheysoft.com and all products published under rheysoft</div>
+  </div>
+
+  <!-- Store compliance badges -->
+  <div class="store-badges">
+    <span class="badge valid">✓ Chrome Web Store compliant</span>
+    <span class="badge valid">✓ Firefox AMO compliant</span>
+    <span class="badge valid">✓ Edge Add-ons compliant</span>
+    <span class="badge valid">✓ MQL5 Market compliant</span>
+    <span class="badge valid">✓ GDPR compliant</span>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="toc" aria-label="Table of Contents">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#controller">Data Controller</a></li>
+      <li><a href="#hosting">Website Hosting (GitHub Pages)</a></li>
+      <li><a href="#logfiles">Server Log Files</a></li>
+      <li><a href="#contact">Contact via Email</a></li>
+      <li><a href="#extensions">Browser Extensions – Data Handling</a></li>
+      <li><a href="#trading">Trading Tools (MQL4/5) – Data Handling</a></li>
+      <li><a href="#cookies">Cookies & Tracking</a></li>
+      <li><a href="#rights">Your Rights (GDPR)</a></li>
+      <li><a href="#complaints">Right to Lodge a Complaint</a></li>
+      <li><a href="#changes">Changes to this Policy</a></li>
+    </ol>
+  </nav>
+
+
+  <!-- 1. DATA CONTROLLER -->
+  <section id="controller">
+    <h2>1 · Data Controller</h2>
+    <p>The data controller responsible for processing your personal data is:</p>
+    <div class="data-block">
+      <strong>Nico König</strong><br />
+      (operating as <strong>rheysoft</strong>)<br />
+      Weinbergstr. 38<br />
+      01445 Radebeul<br />
+      Germany<br /><br />
+      Email: <a href="mailto:rheysoft@gmail.com">rheysoft@gmail.com</a>
+    </div>
+  </section>
+
+
+  <!-- 2. HOSTING -->
+  <section id="hosting">
+    <h2>2 · Website Hosting (GitHub Pages)</h2>
+    <p>
+      This website is hosted via <strong>GitHub Pages</strong>, a service provided by GitHub, Inc.
+      (88 Colin P Kelly Jr St, San Francisco, CA 94107, USA), a subsidiary of Microsoft Corporation.
+    </p>
+    <p>
+      GitHub is certified under the <strong>EU-US Data Privacy Framework (DPF)</strong> (certified
+      since July 2023), which ensures an adequate level of data protection for transfers to the USA
+      in accordance with Art. 45 GDPR.
+    </p>
+    <div class="data-block">
+      <strong>Legal basis:</strong> Art. 6(1)(f) GDPR – legitimate interest in operating a functional and secure website<br />
+      <strong>Purpose:</strong> Technical provision of the website<br />
+      <strong>Retention:</strong> According to GitHub's retention periods (log files typically up to 90 days)<br />
+      <strong>More info:</strong> <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>
+    </div>
+  </section>
+
+
+  <!-- 3. SERVER LOG FILES -->
+  <section id="logfiles">
+    <h2>3 · Server Log Files</h2>
+    <p>
+      GitHub, as hosting provider, automatically collects and stores information in server log files
+      that your browser transmits automatically. This may include:
+    </p>
+    <ul>
+      <li>IP address of the requesting device</li>
+      <li>Date and time of access</li>
+      <li>Name and URL of the accessed file</li>
+      <li>Referring website (referrer URL)</li>
+      <li>Browser type and operating system</li>
+      <li>Name of your Internet service provider</li>
+    </ul>
+    <p>
+      This data is not merged with other data sources and is used solely for technical operation
+      and security purposes by GitHub as the hosting provider.
+    </p>
+    <div class="data-block">
+      <strong>Legal basis:</strong> Art. 6(1)(f) GDPR – legitimate interest in detecting errors and ensuring secure operation
+    </div>
+  </section>
+
+
+  <!-- 4. CONTACT -->
+  <section id="contact">
+    <h2>4 · Contact via Email</h2>
+    <p>
+      If you contact me by email, the data you provide (your email address, your name if stated,
+      and the content of your message) will be processed solely for the purpose of handling your
+      request.
+    </p>
+    <p>
+      This data will not be shared with third parties and will be deleted once your inquiry has
+      been fully resolved, unless statutory retention obligations (e.g., commercial or tax law)
+      require longer storage.
+    </p>
+    <div class="data-block">
+      <strong>Legal basis:</strong> Art. 6(1)(b) GDPR (pre-contractual measures / contract performance)
+      or Art. 6(1)(f) GDPR (legitimate interest in responding to inquiries)<br />
+      <strong>Retention:</strong> Until fully resolved; for business inquiries up to 10 years (§ 257 HGB, § 147 AO)
+    </div>
+  </section>
+
+
+  <!-- 5. BROWSER EXTENSIONS -->
+  <section id="extensions">
+    <h2>5 · Browser Extensions – Data Handling</h2>
+
+    <div class="ok-box">
+      <div class="ok-label">✓ No server-side data collection</div>
+      <p>
+        All browser extensions published under <strong>rheysoft</strong> process data
+        <strong>exclusively locally within your browser</strong>. No user data is transmitted to
+        or stored on servers operated by rheysoft.
+      </p>
+    </div>
+
+    <h3>Locally stored data</h3>
+    <p>
+      Some extensions use the browser's built-in <code>storage.local</code> API to save user
+      preferences (e.g., configuration settings) locally in your browser. This data:
+    </p>
+    <ul>
+      <li>remains exclusively on your device;</li>
+      <li>is never transmitted to any external server;</li>
+      <li>can be deleted at any time by uninstalling the extension or via your browser settings.</li>
+    </ul>
+
+    <h3>Permissions used</h3>
+    <p>
+      Each extension only requests the minimum permissions necessary for its functionality.
+      The specific permissions and their purpose are documented in the respective store listing.
+      <!-- ▶ ADD PER-PRODUCT PERMISSION TABLE HERE if needed ◀ -->
+    </p>
+
+    <h3>External services (if applicable)</h3>
+    <p>
+      If an extension connects to any external API or third-party service (e.g., for market data),
+      this will be explicitly disclosed in the product description in the browser store and in the
+      product-specific privacy policy section.
+      <!-- ▶ ADD if any extension uses external APIs ◀ -->
+    </p>
+
+    <div class="data-block">
+      <strong>Legal basis:</strong> No GDPR-relevant processing occurs for locally-stored data (no personal data
+      transmitted to the controller).<br />
+      <strong>Store purchases:</strong> When downloading or purchasing via browser stores, the respective
+      store operator's privacy policy applies (Google, Mozilla, Microsoft).
+    </div>
+
+    <h3>Data collected by store platforms</h3>
+    <p>
+      When you install an extension from a browser store, the store platform (Google, Mozilla,
+      Microsoft) may collect and process data such as installation events and crash reports in
+      accordance with their respective privacy policies.
+    </p>
+  </section>
+
+
+  <!-- 6. TRADING TOOLS -->
+  <section id="trading">
+    <h2>6 · Trading Tools (MQL4/5) – Data Handling</h2>
+
+    <div class="ok-box">
+      <div class="ok-label">✓ No data transmission to rheysoft</div>
+      <p>
+        Expert Advisors, indicators, and scripts for MetaTrader 4/5 published under
+        rheysoft are <strong>fully local software tools</strong>. They do not
+        establish any connection to servers operated by rheysoft and do not
+        transmit any personal or trading data to rheysoft.
+      </p>
+    </div>
+
+    <p>
+      The tools operate solely within the MetaTrader terminal and communicate with the
+      broker server configured by the user. Data processing by your broker is governed by
+      your broker's privacy policy and terms of service.
+    </p>
+
+    <div class="data-block">
+      <strong>MQL5 Marketplace:</strong> When purchasing via MQL5 Market, MetaQuotes' privacy policy applies:
+      <a href="https://www.mql5.com/en/about/policy" target="_blank" rel="noopener">mql5.com/en/about/policy</a>
+    </div>
+  </section>
+
+
+  <!-- 7. COOKIES & TRACKING -->
+  <section id="cookies">
+    <h2>7 · Cookies &amp; Tracking</h2>
+    <div class="ok-box">
+      <div class="ok-label">✓ No cookies · No tracking · No analytics</div>
+      <p>
+        This website does not set any cookies. No analytics tools (Google Analytics, Matomo,
+        etc.), tracking pixels, or social media plugins are used. No visitor profiling takes
+        place.
+      </p>
+    </div>
+    <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--muted);">
+      GitHub Pages may set cookies as part of its hosting infrastructure. For details, refer to the
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.
+    </p>
+  </section>
+
+
+  <!-- 8. YOUR RIGHTS -->
+  <section id="rights">
+    <h2>8 · Your Rights (GDPR)</h2>
+    <p>
+      You have the following rights regarding your personal data. To exercise them, contact me at:
+      <a href="mailto:rheysoft@gmail.com">rheysoft@gmail.com</a>
+    </p>
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="art">Art. 15 GDPR</div>
+        <div class="name">Right of Access</div>
+        <p>Right to obtain confirmation and access to your personal data.</p>
+      </div>
+      <div class="right-card">
+        <div class="art">Art. 16 GDPR</div>
+        <div class="name">Right to Rectification</div>
+        <p>Right to correct inaccurate personal data concerning you.</p>
+      </div>
+      <div class="right-card">
+        <div class="art">Art. 17 GDPR</div>
+        <div class="name">Right to Erasure</div>
+        <p>Right to deletion where no retention obligations apply.</p>
+      </div>
+      <div class="right-card">
+        <div class="art">Art. 18 GDPR</div>
+        <div class="name">Right to Restriction</div>
+        <p>Right to restrict the processing of your data.</p>
+      </div>
+      <div class="right-card">
+        <div class="art">Art. 20 GDPR</div>
+        <div class="name">Data Portability</div>
+        <p>Right to receive your data in a structured, machine-readable format.</p>
+      </div>
+      <div class="right-card">
+        <div class="art">Art. 21 GDPR</div>
+        <div class="name">Right to Object</div>
+        <p>Right to object to processing based on legitimate interests.</p>
+      </div>
+    </div>
+    <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--muted);">
+      I will respond to requests within 30 days as required by Art. 12(3) GDPR.
+    </p>
+  </section>
+
+
+  <!-- 9. COMPLAINTS -->
+  <section id="complaints">
+    <h2>9 · Right to Lodge a Complaint</h2>
+    <p>
+      You have the right to lodge a complaint with a supervisory authority (Art. 77 GDPR),
+      in particular in the EU Member State of your habitual residence, place of work, or
+      the location of the alleged infringement.
+    </p>
+    <div class="data-block">
+      <strong>Competent supervisory authority for the controller (Germany):</strong><br /><br />
+      <!-- ▶ REPLACE with your state authority ◀ -->
+      Sächsische Datenschutz- und Transparenzbeauftragte<br />
+      Postfach 11 01 32, 01330 Dresden<br /><br /><br />
+      Overview of all EU supervisory authorities:
+      <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener">edpb.europa.eu</a>
+    </div>
+  </section>
+
+
+  <!-- 10. CHANGES -->
+  <section id="changes">
+    <h2>10 · Changes to this Policy</h2>
+    <p>
+      This Privacy Policy will be updated when there are material changes to data processing
+      practices, new products, or legal requirements. The current version is always available at
+      <a href="https://rheysoft.com/privacy">rheysoft.com/privacy</a>.
+      The date of the last update is shown above.
+    </p>
+    <p>
+      For significant changes, registered users (where applicable) will be notified via the
+      distribution channel used for the respective product.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <a href="index.html">rheysoft</a> &nbsp;·&nbsp;
+  <a href="impressum.html">Impressum</a> &nbsp;·&nbsp;
+  <a href="datenschutz.html">Datenschutz</a> &nbsp;·&nbsp;
+  <a href="privacy.html">Privacy Policy</a>
+  <br /><br />
+  © 2026 Nico König · All rights reserved
+</footer>
+
+</body>
+</html>

@@ -1,1 +1,174 @@
-coming soon
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rheysoft – Developer of extensions for different Software solutions</title>
+  <meta name="description" content="rheysoft develops extensions and tools. Quality software for productive workflows." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:      #0a0d13;
+      --surface: #111520;
+      --border:  #1e2535;
+      --text:    #dde1ec;
+      --muted:   #7a8099;
+      --accent:  #4fc3f7;
+      --accent2: #00d4aa;
+      --mono:    'JetBrains Mono', monospace;
+      --serif:   'Source Serif 4', Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: var(--serif); font-weight: 300;
+      min-height: 100vh; display: flex; flex-direction: column;
+    }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    .nav-brand { font-family: var(--mono); font-size: 0.875rem; font-weight: 600; color: var(--accent); text-decoration: none; letter-spacing: 0.05em; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    main {
+      flex: 1;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero-label {
+      font-family: var(--mono); font-size: 0.7rem; color: var(--accent2);
+      letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 600; color: #fff; letter-spacing: -0.02em;
+      line-height: 1.15; margin-bottom: 1.25rem;
+    }
+
+    .tagline {
+      font-size: 1.1rem; color: var(--muted); max-width: 480px;
+      line-height: 1.65; margin-bottom: 2.5rem;
+    }
+
+    .product-tags {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .tag {
+      font-family: var(--mono); font-size: 0.72rem;
+      padding: 0.3rem 0.75rem; border-radius: 4px;
+      border: 1px solid var(--border); color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .stores {
+      display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .store-link {
+      font-family: var(--mono); font-size: 0.75rem;
+      padding: 0.5rem 1rem; border-radius: 6px;
+      border: 1px solid var(--accent); color: var(--accent);
+      text-decoration: none; transition: background 0.2s;
+    }
+    .store-link:hover { background: rgba(79, 195, 247, 0.1); }
+
+    /* Upcoming notice */
+    .notice {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 1.25rem 2rem;
+      font-family: var(--mono); font-size: 0.78rem;
+      color: var(--muted); max-width: 420px; line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .notice strong { color: var(--accent2); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 2rem; text-align: center;
+      font-family: var(--mono); font-size: 0.7rem; color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; margin: 0 0.5rem; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.25rem; }
+      main { padding: 3rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">rheysoft</a>
+  <ul class="nav-links">
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="datenschutz.html">Datenschutz</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="hero-label">Independent Software Developer</div>
+
+  <h1>rheysoft</h1>
+
+  <p class="tagline">
+    <!-- ▶ ANPASSEN: Kurze Beschreibung deiner Produkte / Nische ◀ -->
+    Developing extensions and tools that make
+	professional workflows faster and more efficient.
+  </p>
+
+  <div class="product-tags">
+    <span class="tag">Browser Extensions</span>
+    <span class="tag">Chrome · Firefox · Edge</span>
+    <span class="tag">MetaTrader 4/5</span>
+    <span class="tag">MQL4 · MQL5</span>
+    <span class="tag">Trading Tools</span>
+  </div>
+
+  <!-- ▶ ANPASSEN wenn Store-Links verfügbar: Links einsetzen ◀ -->
+  <!--
+  <div class="stores">
+    <a href="https://chrome.google.com/webstore/search/rheysoft" class="store-link" target="_blank" rel="noopener">
+      Chrome Web Store →
+    </a>
+    <a href="https://addons.mozilla.org/de/firefox/user/rheysoft/" class="store-link" target="_blank" rel="noopener">
+      Firefox Add-ons →
+    </a>
+    <a href="https://www.mql5.com/en/users/rheysoft/seller" class="store-link" target="_blank" rel="noopener">
+      MQL5 Market →
+    </a>
+  </div>
+  -->
+
+  <div class="notice">
+    <strong>Coming soon.</strong><br />
+    Products are currently in final preparation.<br />
+    Contact: <a href="mailto:rheysoft@gmail.com" style="color: var(--accent);">rheysoft@gmail.com</a>
+  </div>
+
+</main>
+
+<footer>
+  <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutzerklärung</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <br /><br />
+  © 2026 Nico König · rheysoft
+</footer>
+
+</body>
+</html>
