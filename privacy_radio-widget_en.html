@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Radio Widget</title>
+  <meta name="description" content="Privacy policy for the Radio Widget browser extension by rheysoft. We collect no personal data.">
+  <meta name="referrer" content="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:       #0a0d13;
+      --bg2:      #0e1a2e;
+      --bg3:      #1a2e4a;
+      --accent:   #c8a84b;
+      --accent-lt:#ffe8a0;
+      --accent-dk:#9c7c2a;
+      --text:     #e8e6e0;
+      --text-soft:#d0cec8;
+      --muted:    #9a9893;
+      --border:   rgba(200, 168, 75, .18);
+      --border-strong: rgba(200, 168, 75, .35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 16px;
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 28px;
+      margin-bottom: 36px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .brand:hover { color: var(--accent-lt); }
+    .brand svg { width: 11px; height: 11px; }
+    h1 {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+      font-size: 30px;
+      letter-spacing: -0.01em;
+      margin-top: 18px;
+      color: var(--text);
+    }
+    .meta {
+      display: block;
+      margin-top: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+    h2 {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+      font-size: 21px;
+      color: var(--accent);
+      margin-top: 44px;
+      margin-bottom: 14px;
+    }
+    h3 {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 500;
+      font-size: 17px;
+      color: var(--text);
+      margin-top: 26px;
+      margin-bottom: 8px;
+    }
+    p, ul, ol { margin-bottom: 14px; color: var(--text-soft); }
+    ul, ol { padding-left: 22px; }
+    li { margin-bottom: 6px; }
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(200, 168, 75, .35);
+      text-underline-offset: 3px;
+      transition: color .15s;
+    }
+    a:hover { color: var(--accent-lt); }
+    strong { color: var(--text); font-weight: 600; }
+    code, .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.92em;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+    .tldr {
+      background: var(--bg2);
+      border-left: 3px solid var(--accent);
+      padding: 18px 22px;
+      margin: 26px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .tldr h2 {
+      margin: 0 0 10px 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+    .tldr ul { margin-bottom: 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px;
+      font-size: 14.5px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: var(--text-soft);
+    }
+    th {
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--border-strong);
+    }
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 36px 0;
+    }
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    footer a { color: var(--accent); }
+    @media (max-width: 600px) {
+      .wrap { padding: 40px 18px 60px; }
+      h1 { font-size: 26px; }
+      h2 { font-size: 19px; }
+      table { font-size: 13px; }
+      th, td { padding: 8px 8px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a href="https://rheysoft.github.io/" class="brand">
+    <svg viewBox="0 0 10 10" aria-hidden="true">
+      <polygon points="5,0 10,5 5,10 0,5" fill="currentColor"/>
+    </svg>
+    rheysoft
+  </a>
+  <h1>Privacy Policy — Radio Widget
+    <span class="meta">Effective [YEAR]-[MM]-[DD] · Last updated [YEAR]-[MM]-[DD]</span>
+  </h1>
+</header>
+
+<p>This privacy policy describes how the <strong>Radio Widget</strong> browser extension ("the extension") handles your data. It is published by <strong>rheysoft</strong>, reachable at <a href="mailto:rheysoft@gmail.com">rheysoft@gmail.com</a>. The extension is distributed via the Chrome Web Store, Firefox Add-ons (AMO) and the Microsoft Edge Add-ons store.</p>
+
+<div class="tldr">
+  <h2>TL;DR</h2>
+  <ul>
+    <li>We do <strong>not</strong> collect, store, or transmit any personal data about you.</li>
+    <li>All your data (favorites, settings, license state) stays inside your browser, in <code>chrome.storage.local</code>. Nothing is sent to a server we operate.</li>
+    <li>The extension talks to three third-party services on your behalf: <strong>Radio Browser</strong> (community station directory), <strong>Gumroad</strong> (only for Premium license verification, only when you activate Premium), and <strong>individual radio stations</strong> (audio stream + station logo).</li>
+    <li>Free version works completely without any account, license key, or third-party API call except Radio Browser.</li>
+    <li>You can delete all locally stored data at any time via <strong>Settings → "Clear all local data"</strong>.</li>
+  </ul>
+</div>
+
+<h2>1. What the extension stores locally</h2>
+<p>The extension uses <code>chrome.storage.local</code> to persist the following inside your browser. Nothing is sent off your device.</p>
+<table>
+  <thead><tr><th>Stored data</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td>List of favorite stations</td><td>So your favorites survive browser restarts</td></tr>
+    <tr><td>Last 10 played stations</td><td>"Recently played" list — cleared automatically when you close and restart the browser</td></tr>
+    <tr><td>Play counts per station</td><td>Sorting favorites by "most played"</td></tr>
+    <tr><td>Current player state (last station, volume, mute, list context)</td><td>Resume playback after restart</td></tr>
+    <tr><td>UI preferences (theme, marquee toggle, logo toggle, pulse toggle, mode)</td><td>Remember your settings</td></tr>
+    <tr><td>License key + verification cache (only if Premium activated)</td><td>Verify Premium without re-prompting on every launch</td></tr>
+    <tr><td>Random per-install identifier (<code>machineId</code>)</td><td>Bind license cache to this browser install — never transmitted</td></tr>
+  </tbody>
+</table>
+<p>You can inspect this data yourself via your browser's DevTools: <code>Application</code> → <code>Storage</code> → <code>chrome.storage.local</code>.</p>
+
+<h2>2. What the extension does NOT store or collect</h2>
+<ul>
+  <li>No name, no email, no address, no phone number</li>
+  <li>No IP address (we cannot see it; only the third parties you connect to can)</li>
+  <li>No browser fingerprint or device identifier other than the random local <code>machineId</code> (never transmitted)</li>
+  <li>No usage analytics, no telemetry, no crash reports</li>
+  <li>No cookies set by the extension</li>
+  <li>No <code>chrome.storage.sync</code> — nothing syncs across devices</li>
+</ul>
+
+<h2>3. Network connections</h2>
+<p>The extension's Content Security Policy restricts outbound connections to the following destinations:</p>
+
+<h3>3.1 Radio Browser (<code>*.radio-browser.info</code>)</h3>
+<p>A community-operated, open directory of internet radio stations. The extension connects to fetch:</p>
+<ul>
+  <li><strong>Station lists</strong>: When you browse or search. Sent: your search query and selected filters (country, genre). Received: list of stations.</li>
+  <li><strong>Country list</strong>: When you open the "By country" filter.</li>
+  <li><strong>Play count ping</strong> (<code>/json/url/{uuid}</code>): When you start a station. Sent: only the station's UUID. Used by Radio Browser to maintain popularity rankings. No personal data attached.</li>
+</ul>
+<p>Radio Browser logs IP addresses and request data on their side, as any web server does. See <a href="https://www.radio-browser.info" target="_blank" rel="noopener">Radio Browser's website</a> for details.</p>
+
+<h3>3.2 Gumroad (<code>api.gumroad.com</code>)</h3>
+<p>Only contacted when you activate Premium, and every 7 days afterwards to re-verify your license. Sent: your license key and the product ID. Received: a boolean validity flag and purchase metadata.</p>
+<p>If Gumroad is unreachable, the extension grants a 14-day offline grace period using its locally cached verification status, then disables Premium until you reconnect.</p>
+<p>Gumroad acts as our payment processor and license vendor. See <a href="https://gumroad.com/privacy" target="_blank" rel="noopener">Gumroad's privacy policy</a> for how they handle the data you provide when buying.</p>
+
+<h3>3.3 Individual radio stations</h3>
+<p>Each station you play involves a direct connection between your browser and the station's stream server. The extension does not act as a proxy.</p>
+<ul>
+  <li><strong>Audio stream</strong>: The browser makes an HTTP/HTTPS request to the station's stream URL. We set <code>Referrer-Policy: no-referrer</code>, so the extension's identifier is <strong>not</strong> sent in the <code>Referer</code> header.</li>
+  <li><strong>Station favicon</strong>: Same treatment — <code>referrerpolicy="no-referrer"</code> on the <code>&lt;img&gt;</code> element.</li>
+</ul>
+<p>Station operators see your IP address (unavoidable for any HTTP connection) and the fact that you connected to their stream. They cannot see that the connection came from this extension.</p>
+
+<h2>4. Premium and payment</h2>
+<p>The Premium upgrade is a one-time purchase processed by Gumroad. The extension never sees your payment details (card number, PayPal account). You receive a license key from Gumroad after purchase; you enter that key in the extension to unlock Premium features.</p>
+<p>The same license key unlocks Premium in Chrome, Firefox, and Edge separately — you simply enter it once in each browser.</p>
+
+<h2>5. Your rights</h2>
+<p>You have the right to:</p>
+<ul>
+  <li><strong>Access</strong> your data: it's all in <code>chrome.storage.local</code>, viewable via DevTools.</li>
+  <li><strong>Export</strong> your favorites: Settings → Favorites → "Export JSON".</li>
+  <li><strong>Erase</strong> all your data: Settings → "Clear all local data". This wipes every key the extension uses.</li>
+  <li><strong>Deactivate Premium</strong> on a device without losing your license key: Settings → "Deactivate Premium on this device".</li>
+  <li><strong>Object</strong> to processing: simply uninstall the extension. We have no data to delete on our side because we don't store any.</li>
+  <li><strong>Lodge a complaint</strong> with your data protection authority (in the EU, this would typically be the authority in your country of residence).</li>
+</ul>
+<p>To exercise any right that requires action from us, write to <a href="mailto:rheysoft@gmail.com">rheysoft@gmail.com</a>. Note that because we store no personal data about you, we generally cannot act on access or erasure requests other than confirming this fact.</p>
+
+<h2>6. Legal basis (GDPR Art. 6)</h2>
+<p>Where the extension processes data on your behalf (e.g. fetching station lists from Radio Browser), the legal basis is <strong>legitimate interest</strong> (Art. 6(1)(f) GDPR) — namely, providing the functionality you installed the extension for. License verification involves a contractual relationship under Art. 6(1)(b) when you purchase Premium.</p>
+<p>We do not rely on consent (Art. 6(1)(a)) because we do not process any data beyond what is strictly necessary to deliver the requested functionality.</p>
+
+<h2>7. Children's privacy</h2>
+<p>The extension is not directed at children under 13. We do not knowingly collect data from children. Since we collect nothing from anyone, this is largely a formality.</p>
+
+<h2>8. Data retention</h2>
+<ul>
+  <li><strong>Locally stored data</strong>: kept until you delete it (or uninstall the extension, which deletes everything).</li>
+  <li><strong>License verification cache</strong>: refreshed every 7 days, replaced on each successful verify.</li>
+  <li><strong>Radio Browser logs</strong>: governed by their retention policy.</li>
+  <li><strong>Gumroad records</strong>: governed by their retention policy.</li>
+</ul>
+
+<h2>9. Cross-border transfers</h2>
+<p>When you connect to Radio Browser or a station's stream server, your browser may exchange data with servers outside your country of residence. The extension itself does not transfer data across borders; the browser does, the same way it would when visiting any website.</p>
+<p>Gumroad operates in the United States. By purchasing Premium, you accept that license-verification requests will reach Gumroad's US-based infrastructure.</p>
+
+<h2>10. Changes to this policy</h2>
+<p>We may update this policy when the extension's behavior changes (for example, if new functionality requires a new third-party service). The "Last updated" date at the top reflects the most recent change. We will not retroactively expand data processing for features that previously collected nothing.</p>
+
+<h2>11. Contact</h2>
+<p>
+  <strong>rheysoft</strong><br>
+  <a href="mailto:rheysoft@gmail.com">rheysoft@gmail.com</a><br>
+  Imprint: <a href="https://rheysoft.github.io/impressum.html">rheysoft.github.io/impressum.html</a>
+</p>
+
+<footer>
+  &copy; 2026 rheysoft · <a href="https://rheysoft.github.io/">rheysoft.github.io</a>
+</footer>
+
+</div>
+</body>
+</html>
