@@ -72,6 +72,29 @@
       margin-bottom: 1.5rem;
     }
 
+    .lang-nav {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1.25rem 0 0;
+      display: flex;
+      gap: .75rem;
+      font-family: var(--font-mono);
+      font-size: .8rem;
+    }
+    .lang-nav a {
+      display: inline-block;
+      color: var(--gold);
+      background: var(--navy);
+      border: 1px solid var(--navy-mid);
+      border-radius: 4px;
+      padding: .35rem .8rem;
+      letter-spacing: .04em;
+    }
+    .lang-nav a:hover {
+      background: var(--navy-mid);
+      text-decoration: none;
+    }
+
     h1 {
       font-size: 1.75rem;
       color: var(--gold-lite);
@@ -174,12 +197,17 @@
   <div class="wordmark">rheysoft <span>/ SessionVault</span></div>
 </header>
 
+<nav class="lang-nav" aria-label="Sprache / Language">
+  <a href="#de">Deutsch</a>
+  <a href="#en">English</a>
+</nav>
+
 <main>
 
   <!-- ════════════════════════════════════════════
        DEUTSCH
        ════════════════════════════════════════════ -->
-  <div class="lang-badge">Deutsch</div>
+  <div class="lang-badge" id="de">Deutsch</div>
 
   <h1>Datenschutzerklärung</h1>
   <p>SessionVault ist eine Browser-Extension für Chrome, Firefox und Edge.
@@ -187,7 +215,7 @@
   verarbeitet werden und welche Rechte Sie als betroffene Person haben.</p>
 
   <div class="meta-box">
-    <strong>Stand:</strong> 30.05.2026 &nbsp;|&nbsp;
+    <strong>Stand:</strong> 06.06.2026 &nbsp;|&nbsp;
     <strong>Version:</strong> SessionVault 1.0 &nbsp;|&nbsp;
     <strong>Geltungsbereich:</strong> Browser-Extension (Chrome, Firefox, Edge)
   </div>
@@ -226,7 +254,7 @@
     <tbody>
       <tr>
         <td>Session-Daten</td>
-        <td>Tab-URLs, Seitentitel, Favicons, Tab-Gruppen, Notizen</td>
+        <td>Tab-URLs, Seitentitel, Tab-Gruppen, Notizen</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
@@ -238,7 +266,7 @@
       </tr>
       <tr>
         <td>Lesezeichen-Warteschlange</td>
-        <td>URL, Seitentitel, Favicon gespeicherter Links</td>
+        <td>URL, Seitentitel gespeicherter Links</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
@@ -255,9 +283,9 @@
         <td><span class="tag remote">An Gumroad übermittelt</span></td>
       </tr>
       <tr>
-        <td>Auto-Export-Backup (Premium, optional)</td>
-        <td>JSON-Export aller Sessions</td>
-        <td>Download-Ordner Ihres Geräts</td>
+        <td>Automatisches Backup (Premium, optional)</td>
+        <td>JSON-Abbild aller Sessions (max. 5, rotierend)</td>
+        <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
     </tbody>
@@ -267,9 +295,16 @@
 
   <h3>4.1 Session-Speicherung (Kernfunktion)</h3>
   <p>Wenn Sie eine Session speichern, liest die Extension die aktuellen
-  Tab-URLs, Seitentitel, Favicon-URLs und Tab-Gruppen-Informationen aus
+  Tab-URLs, Seitentitel und Tab-Gruppen-Informationen aus
   Ihrem Browser aus. Diese Daten werden <strong>ausschließlich lokal</strong>
   in <code>chrome.storage.local</code> gespeichert.</p>
+  <p>Favicons (Seitensymbole) werden <strong>nicht</strong> als Adressen
+  gespeichert oder von externen Servern nachgeladen. In der Vorschau zeigt
+  die Extension das Seitensymbol ausschließlich aus dem lokalen
+  Browser-Cache an (in Chrome und Edge über die lokale Favicon-Schnittstelle
+  des Browsers); in Firefox wird ein neutrales Platzhaltersymbol angezeigt.
+  Beim Anzeigen Ihrer Sessions werden somit <strong>keine Verbindungen zu den
+  gespeicherten Websites</strong> aufgebaut.</p>
   <ul>
     <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung —
     die Session-Speicherung ist die Kernleistung der Extension)</li>
@@ -294,11 +329,16 @@
     <a href="https://gumroad.com/privacy" target="_blank" rel="noopener noreferrer">gumroad.com/privacy</a></li>
   </ul>
 
-  <h3>4.3 Auto-Export-Backup (Premium, optional)</h3>
-  <p>Die optionale Auto-Export-Funktion schreibt eine JSON-Datei mit Ihren
-  Sessions in den Download-Ordner Ihres Geräts. Diese Datei verlässt das
-  Gerät nicht. Die Funktion nutzt die Browser-API <code>chrome.downloads</code>
-  und ist standardmäßig deaktiviert.</p>
+  <h3>4.3 Automatisches Backup (Premium, optional)</h3>
+  <p>Die optionale automatische Backup-Funktion legt ein JSON-Abbild Ihrer
+  Sessions im lokalen Browser-Speicher der Extension
+  (<code>chrome.storage.local</code>) ab. Es werden maximal fünf Abbilder
+  vorgehalten (ältere werden automatisch überschrieben). Diese Daten
+  verlassen Ihr Gerät nicht und werden nicht in den Download-Ordner
+  geschrieben. Die Funktion ist standardmäßig deaktiviert.</p>
+  <p>Das manuelle Backup ("Backup jetzt") erstellt auf Ihre Aktion hin eine
+  JSON-Datei, die Ihr Browser über den normalen Download-Vorgang speichert.
+  Auch hierbei werden keine Daten an externe Server übermittelt.</p>
   <ul>
     <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO</li>
     <li>Externe Übermittlung: Keine</li>
@@ -313,17 +353,19 @@
   <h2>5. Zugriffsberechtigungen der Extension</h2>
   <p>SessionVault fordert folgende Browser-Berechtigungen an:</p>
   <ul>
-    <li><strong>tabs:</strong> Lesen von URL, Titel und Favicon aktuell geöffneter
+    <li><strong>tabs:</strong> Lesen von URL und Titel aktuell geöffneter
     Tabs für die Session-Speicherung. Nur aktiv, wenn Sie eine Aktion auslösen.</li>
     <li><strong>storage:</strong> Lokale Speicherung aller Extension-Daten.</li>
     <li><strong>alarms:</strong> Zeitgesteuerte Auto-Save- und
     Crash-Recovery-Funktionen.</li>
     <li><strong>sidePanel / sidebar_action:</strong> Anzeige des seitlichen Panels.</li>
     <li><strong>commands:</strong> Tastaturkürzel.</li>
-    <li><strong>tabGroups (optional):</strong> Lesen und Schreiben von Tab-Gruppen.
-    Wird nur auf Anfrage aktiviert.</li>
-    <li><strong>downloads (Premium):</strong> Schreiben des Auto-Export-Backups in
-    den lokalen Download-Ordner. Nur bei aktivierter Auto-Export-Funktion.</li>
+    <li><strong>tabGroups:</strong> Lesen und Schreiben von Tab-Gruppen, um
+    Gruppen beim Speichern und Wiederherstellen zu erhalten.</li>
+    <li><strong>favicon (nur Chrome/Edge):</strong> Anzeige des lokal
+    zwischengespeicherten Seitensymbols in der Vorschau. Liest ausschließlich
+    den lokalen Browser-Cache; es werden keine Netzwerk-Anfragen an die
+    gespeicherten Websites gestellt.</li>
   </ul>
 
   <h2>6. Datenweitergabe an Dritte</h2>
@@ -385,7 +427,7 @@
   <!-- ════════════════════════════════════════════
        ENGLISH
        ════════════════════════════════════════════ -->
-  <div class="lang-section">
+  <div class="lang-section" id="en">
     <div class="lang-badge">English</div>
 
     <h1>Privacy Policy</h1>
@@ -394,7 +436,7 @@
     and what rights you have as a data subject.</p>
 
     <div class="meta-box">
-      <strong>Last updated:</strong> 30.05.2026 &nbsp;|&nbsp;
+      <strong>Last updated:</strong> 06.06.2026 &nbsp;|&nbsp;
       <strong>Version:</strong> SessionVault 1.0 &nbsp;|&nbsp;
       <strong>Scope:</strong> Browser extension (Chrome, Firefox, Edge)
     </div>
@@ -435,7 +477,7 @@
       <tbody>
         <tr>
           <td>Session data</td>
-          <td>Tab URLs, page titles, favicons, tab groups, notes</td>
+          <td>Tab URLs, page titles, tab groups, notes</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
@@ -447,7 +489,7 @@
         </tr>
         <tr>
           <td>Reading Queue</td>
-          <td>URL, page title, favicon of saved links</td>
+          <td>URL, page title of saved links</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
@@ -464,9 +506,9 @@
           <td><span class="tag remote">Sent to Gumroad</span></td>
         </tr>
         <tr>
-          <td>Auto-export backup (Premium, optional)</td>
-          <td>JSON export of all sessions</td>
-          <td>Device Downloads folder</td>
+          <td>Automatic backup (Premium, optional)</td>
+          <td>JSON snapshot of all sessions (max. 5, rotating)</td>
+          <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
       </tbody>
@@ -475,9 +517,15 @@
     <h2>4. Individual Processing Operations</h2>
 
     <h3>4.1 Session saving (core function)</h3>
-    <p>When you save a session, the extension reads tab URLs, page titles, favicon
-    URLs, and tab group information from your browser. This data is stored
+    <p>When you save a session, the extension reads tab URLs, page titles,
+    and tab group information from your browser. This data is stored
     <strong>exclusively locally</strong> in <code>chrome.storage.local</code>.</p>
+    <p>Favicons (site icons) are <strong>not</strong> stored as addresses or
+    fetched from external servers. In previews, the extension displays the site
+    icon solely from the local browser cache (in Chrome and Edge via the
+    browser's local favicon interface); in Firefox a neutral placeholder icon is
+    shown. As a result, viewing your sessions establishes
+    <strong>no connections to the saved websites</strong>.</p>
     <ul>
       <li>Legal basis: Art. 6(1)(b) GDPR (performance of contract —
       session saving is the core service of the extension)</li>
@@ -501,11 +549,16 @@
       <a href="https://gumroad.com/privacy" target="_blank" rel="noopener noreferrer">gumroad.com/privacy</a></li>
     </ul>
 
-    <h3>4.3 Auto-export backup (Premium, optional)</h3>
-    <p>The optional auto-export feature writes a JSON file containing your
-    sessions to your device's Downloads folder. This file does not leave your
-    device. The feature uses the <code>chrome.downloads</code> browser API and
-    is disabled by default.</p>
+    <h3>4.3 Automatic backup (Premium, optional)</h3>
+    <p>The optional automatic backup feature stores a JSON snapshot of your
+    sessions in the extension's local browser storage
+    (<code>chrome.storage.local</code>). A maximum of five snapshots is kept
+    (older ones are overwritten automatically). This data does not leave your
+    device and is not written to the Downloads folder. The feature is disabled
+    by default.</p>
+    <p>The manual backup ("Backup now") creates, on your action, a JSON file that
+    your browser saves via the normal download process. No data is transmitted to
+    external servers in this case either.</p>
     <ul>
       <li>Legal basis: Art. 6(1)(b) GDPR</li>
       <li>External transmission: None</li>
@@ -519,16 +572,17 @@
     <h2>5. Extension Permissions</h2>
     <p>SessionVault requests the following browser permissions:</p>
     <ul>
-      <li><strong>tabs:</strong> Read URL, title, and favicon of open tabs for
+      <li><strong>tabs:</strong> Read URL and title of open tabs for
       session saving. Only active when you trigger an action.</li>
       <li><strong>storage:</strong> Local storage of all extension data.</li>
       <li><strong>alarms:</strong> Scheduled auto-save and crash recovery.</li>
       <li><strong>sidePanel / sidebar_action:</strong> Display of the side panel.</li>
       <li><strong>commands:</strong> Keyboard shortcuts.</li>
-      <li><strong>tabGroups (optional):</strong> Reading and writing tab groups.
-      Requested only when first used.</li>
-      <li><strong>downloads (Premium):</strong> Writing the auto-export backup
-      to your local Downloads folder. Only when auto-export is enabled.</li>
+      <li><strong>tabGroups:</strong> Reading and writing tab groups to preserve
+      groups when saving and restoring sessions.</li>
+      <li><strong>favicon (Chrome/Edge only):</strong> Display of the locally
+      cached site icon in previews. Reads the local browser cache only; no
+      network requests are made to the saved websites.</li>
     </ul>
 
     <h2>6. Third-Party Disclosure</h2>
