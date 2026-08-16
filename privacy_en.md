@@ -53,7 +53,7 @@ If you contact me via email, I will process your email address, name (if provide
 
 ### ✅ No Data Collected or Transmitted
 
-All browser extensions published under **rheysoft** on the Chrome Web Store, Firefox Add-ons (AMO), and Microsoft Edge Add-ons:
+All browser extensions published under **rheysoft** on Firefox Add-ons (AMO), the Chrome Web Store, and Microsoft Edge Add-ons:
 
 - **Process all data exclusively locally within your browser**
 - **Do not transmit any personal data to rheysoft servers**
@@ -78,7 +78,7 @@ If a specific extension connects to an external API (e.g., for market data), thi
 
 ### Store Platform Data
 
-When you install an extension from a browser store, the store operator (Google, Mozilla, Microsoft) may collect data such as installation events. This is governed by their respective privacy policies.
+When you install an extension from a browser store, the store operator (Mozilla, Google, Microsoft) may collect data such as installation events. This is governed by their respective privacy policies.
 
 ---
 
@@ -94,7 +94,7 @@ Expert Advisors, indicators, and scripts for MetaTrader 4/5 published under rhey
 
 The tools communicate solely with the broker server configured in your MetaTrader terminal. Your broker's privacy policy governs how your trading and account data is handled.
 
-**MQL5 Market purchases:** When purchasing via MQL5 Market, MetaQuotes' privacy policy applies: [mql5.com/en/about/policy](https://www.mql5.com/en/about/policy)
+**MQL5 Market purchases:** When purchasing via MQL5 Market, MetaQuotes' privacy policy applies: [mql5.com/en/about/privacy](https://www.mql5.com/en/about/privacy)
 
 ---
 
@@ -149,4 +149,4 @@ The date of the last update is shown at the top of this document.
 
 ---
 
-*This Privacy Policy was prepared in accordance with the EU General Data Protection Regulation (GDPR / DSGVO) and the requirements of the Chrome Web Store Developer Program Policies, Firefox Add-on Policies, and Microsoft Edge Add-ons policies.*
+*This Privacy Policy was prepared in accordance with the EU General Data Protection Regulation (GDPR / DSGVO) and the requirements of the Firefox Add-on Policies, Chrome Web Store Developer Program Policies, and Microsoft Edge Add-ons policies.*
