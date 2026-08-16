@@ -184,7 +184,7 @@
     rheysoft
   </a>
   <h1>Privacy Policy - Radio Widget
-    <span class="meta">Effective 2026-05-26 · Last updated 2026-07-21</span>
+    <span class="meta">Version 1.1.0 · Effective 2026-05-26 · Last updated 2026-08-16</span>
   </h1>
 </header>
 
@@ -194,8 +194,8 @@
   <h2>TL;DR</h2>
   <ul>
     <li>We do <strong>not</strong> collect, store, or transmit any personal data about you.</li>
-    <li>All your data (favorites, settings, license state) stays inside your browser, in <code>chrome.storage.local</code>. Nothing is sent to a server we operate.</li>
-    <li>The extension talks to three third-party services on your behalf: <strong>Radio Browser</strong> (community station directory), <strong>Gumroad</strong> (only for Premium license verification, only when you activate Premium), and <strong>individual radio stations</strong> (audio stream + station logo).</li>
+    <li>All your data (favorites, the stations you added yourself, the notes you wrote, settings, license state) stays inside your browser, in <code>chrome.storage.local</code>. Nothing is sent to a server we operate.</li>
+    <li>The extension talks to three third-party services on your behalf: <strong>Radio Browser</strong> (community station directory), <strong>Gumroad</strong> (only for Premium license verification, only when you activate Premium), and <strong>individual radio stations</strong> (audio stream; station logo only if you switch logo loading on).</li>
     <li>Free version works completely without any account, license key, or third-party API call except Radio Browser.</li>
     <li>You can delete all locally stored data at any time via <strong>Settings → "Clear all local data"</strong>.</li>
   </ul>
@@ -207,20 +207,26 @@
   <thead><tr><th>Stored data</th><th>Purpose</th></tr></thead>
   <tbody>
     <tr><td>List of favorite stations</td><td>So your favorites survive browser restarts</td></tr>
+    <tr><td>Stations you added yourself (<code>customStations</code>)</td><td>The Premium "My stations" list: the name and stream URL you typed in or imported from a playlist, plus an optional country and tags. Never transmitted anywhere - not to Radio Browser, not to Gumroad. The URL is validated on your device (<code>http:</code> or <code>https:</code> only) and is contacted only by the audio player, when you play that station.</td></tr>
+    <tr><td>Notes you wrote about stations (<code>stationNotes</code>)</td><td>The Premium "Station notes" feature: free text you typed, stored against the station it belongs to. Nothing is derived from it and nothing is stored alongside it. Never transmitted anywhere - not to Radio Browser, not to Gumroad. Deleting a station you added deletes its note with it; un-starring a favorite does not.</td></tr>
     <tr><td>Last 10 played stations</td><td>"Recently played" list - cleared automatically when you close and restart the browser</td></tr>
     <tr><td>Back/forward navigation stack (<code>playHistory</code>, <code>playHistoryIdx</code>)</td><td>Lets you step back and forward through the stations you moved between. Capped at 50 entries, and cleared when you close and restart the browser - deliberately, so that no durable record of your listening habits exists.</td></tr>
     <tr><td>Play counts per station</td><td>Sorting favorites by "most played"</td></tr>
     <tr><td>Current player state (last station, volume, list context, toolbar icon state <code>iconPlaying</code>)</td><td>Resume playback after restart, and show the correct play/pause state on the toolbar icon</td></tr>
-    <tr><td>UI preferences (theme, marquee toggle, logo toggle, pulse toggle, mode)</td><td>Remember your settings</td></tr>
+    <tr><td>UI preferences (theme, marquee toggle, logo toggle, pulse toggle, player mode <code>playerMode</code> - side panel or popup)</td><td>Remember your settings</td></tr>
+    <tr><td>Custom theme colors (<code>customTheme</code>)</td><td>The background color and accent color you picked for the "Custom" theme. Stored separately from the theme selection above, so your two colors are still there if you switch to a preset theme and back.</td></tr>
+    <tr><td>Station-logo loading (<code>remoteLogos</code>)</td><td>Remember whether you switched on Settings → Display options → "Load station logos from the web". Off by default; while it is off no logo request is made at all (see 3.3).</td></tr>
     <tr><td>Side panel tab last open (<code>activeTab</code>)</td><td>Reopen the side panel on the tab you were last using - Player, Browse, Favorites or Settings - instead of always returning to Player</td></tr>
     <tr><td>Tab bar position (<code>tabBarPosition</code>)</td><td>Remember whether you placed the tab bar at the top or the bottom</td></tr>
-    <tr><td>Sort order of "My stations" (<code>customSortMode</code>)</td><td>Remember how you chose to sort the stations you added yourself - by date added, A-Z, or most played</td></tr>
+    <tr><td>Sort order of Favorites (<code>favSortMode</code>)</td><td>Remember which of the three sort buttons you last chose for the Favorites list - by date added, A-Z, or most played</td></tr>
+    <tr><td>Sort order of "My stations" (<code>customSortMode</code>)</td><td>The same for the stations you added yourself, which sorts independently of Favorites - by date added, A-Z, or most played</td></tr>
     <tr><td>License key + verification cache (only if Premium activated)</td><td>Verify Premium without re-prompting on every launch</td></tr>
     <tr><td>Random per-install identifier (<code>machineId</code>)</td><td>Bind license cache to this browser install - never transmitted</td></tr>
     <tr><td>Cached list of Radio Browser API hostnames (<code>apiHosts</code>)</td><td>So a later session can reach a working mirror if the default one is unavailable. Written after a successful Radio Browser request. Contains no data about you.</td></tr>
+    <tr><td>Saved station list (<code>browseCache</code>)</td><td>Show the station list you last loaded, instead of an empty page, when the station directory cannot be reached. This is the directory's own public station data, not a record of what you did. It is replaced by the next successful load, removed by "Clear all local data", and not included in a backup export.</td></tr>
   </tbody>
 </table>
-<p>You can inspect this data yourself via your browser's DevTools: <code>Application</code> → <code>Storage</code> → <code>chrome.storage.local</code>.</p>
+<p>You can read this data yourself. The parts that are yours - favorites, the stations you added, your notes - come out in readable form via Favorites → "Export backup" (see section 6). For the raw contents of every key, open your browser's developer tools on the extension's side panel and run <code>chrome.storage.local.get(null, console.log)</code> in the console. We deliberately do not name a menu path here: where the developer tools sit, and whether extension storage gets its own panel in them, differs between Chrome, Edge and Firefox and changes between browser versions.</p>
 
 <h2>2. What the extension does NOT store or collect</h2>
 <ul>
@@ -234,7 +240,7 @@
 
 <h2>3. Network connections</h2>
 <p>The extension makes outbound connections to the destinations below.</p>
-<p>The extension's Content Security Policy limits directory and license requests (3.1 and 3.2) to the hosts named there; no other destination can be contacted for those. It does <strong>not</strong> limit which host an audio stream or a station logo is fetched from (3.3): those connect to whatever address the station publishes in the Radio Browser directory. The safeguards that do apply to 3.3 are described in that section.</p>
+<p>The extension's Content Security Policy limits directory and license requests (3.1 and 3.2) to the hosts named there; no other destination can be contacted for those. It does <strong>not</strong> limit which host an audio stream or a station logo is fetched from (3.3): those connect to whatever address the station publishes in the Radio Browser directory. Station logos are <strong>off by default</strong> and are fetched only if you turn them on. The safeguards that do apply to 3.3 are described in that section.</p>
 
 <h3>3.1 Radio Browser (<code>*.radio-browser.info</code>)</h3>
 <p>A community-operated, open directory of internet radio stations. The extension connects to fetch:</p>
@@ -255,19 +261,33 @@
 <p>Each station you play involves a direct connection between your browser and the station's stream server. The extension does not act as a proxy.</p>
 <ul>
   <li><strong>Audio stream</strong>: The browser makes an HTTP/HTTPS request to the station's stream URL. We set <code>Referrer-Policy: no-referrer</code>, so the extension's identifier is <strong>not</strong> sent in the <code>Referer</code> header. The extension accepts a stream URL only if it uses <code>http:</code> or <code>https:</code>; it does not restrict which host that URL points to.</li>
-  <li><strong>Station favicon</strong>: Same treatment - <code>referrerpolicy="no-referrer"</code> on the <code>&lt;img&gt;</code> element. The logo URL is likewise accepted only if it uses <code>http:</code> or <code>https:</code>; anything else is discarded and no request is made. This rejects malformed directory entries, but it does not restrict which host a valid logo URL points to.</li>
+  <li><strong>Station logo</strong>: <strong>Off by default.</strong> Station logos are hosted by whoever submitted the station to the directory, so the extension does not load them unless you turn on Settings → Display options → "Load station logos from the web". While the setting is off, no request is made and a local placeholder is shown instead. While it is on, a logo is fetched the same way as a stream: <code>referrerpolicy="no-referrer"</code> on the <code>&lt;img&gt;</code> element, and the URL is accepted only if it uses <code>http:</code> or <code>https:</code> - anything else is discarded and no request is made. That check rejects malformed directory entries; it does not restrict which host a valid logo URL points to. With the setting on, opening a station list connects your browser to every logo host in that list, and each of those hosts can see your IP address.</li>
 </ul>
 <p>Station operators see your IP address (unavoidable for any HTTP connection) and the fact that you connected to their stream. They cannot see that the connection came from this extension.</p>
 
-<h2>4. Premium and payment</h2>
+<h3>3.4 Adding and importing your own stations</h3>
+<p>A station you add by hand, and a playlist you import (Favorites → "Import playlist"), involve no network connection of their own. The <code>.m3u</code> or <code>.pls</code> file you choose, or the text you paste, is read and parsed on your device; nothing is uploaded, and no address in it is contacted until you play that station - at which point it is an ordinary stream connection as described in 3.3. The extension makes no reachability check against a URL you typed, so no request goes out to it before you press play. Because these hosts come from you rather than from the directory, nobody has vetted them.</p>
+
+<h2>4. Extension permissions</h2>
+<p>Radio Widget declares the permissions below. Which ones apply depends on the browser: on Chrome and Edge the extension runs as a service worker with a side panel, on Firefox as an event page with a sidebar, so the two builds do not declare the same set. Nothing here grants access to your tabs, browsing history, bookmarks, cookies, clipboard or any website - the extension declares no host permissions at all.</p>
+<ul>
+  <li><strong><code>storage</code></strong> (Chrome, Edge and Firefox): keep the data listed in section 1 inside your browser. Local only - <code>chrome.storage.sync</code> is not used, so nothing travels to another device.</li>
+  <li><strong><code>alarms</code></strong> (Chrome, Edge and Firefox): run the sleep timer and the wake timer, and on Firefox additionally keep the background page awake while audio is playing. Local scheduling only; no data is sent.</li>
+  <li><strong><code>commands</code></strong> (Chrome, Edge and Firefox): the keyboard shortcuts - play/pause, next station, previous station, plus one for opening the widget on Chrome and Edge. Like <code>sidebar_action</code> below it is a manifest declaration rather than a permission prompt, and it reads no data of any kind.</li>
+  <li><strong><code>sidePanel</code></strong> (Chrome and Edge only): show the player in the browser's side panel.</li>
+  <li><strong><code>sidebar_action</code></strong> (Firefox only): the same thing under Firefox's own name for it - show the player in the sidebar. It is a manifest declaration rather than a permission prompt.</li>
+  <li><strong><code>offscreen</code></strong> (Chrome and Edge only): keep a hidden audio document alive so playback continues when the side panel is closed. Firefox neither needs nor requests this - its event page holds the audio itself.</li>
+</ul>
+
+<h2>5. Premium and payment</h2>
 <p>The Premium upgrade is a one-time purchase processed by Gumroad. The extension never sees your payment details (card number, PayPal account). You receive a license key from Gumroad after purchase; you enter that key in the extension to unlock Premium features.</p>
 <p>The same license key unlocks Premium in Firefox, Chrome, and Edge separately - you simply enter it once in each browser.</p>
 
-<h2>5. Your rights</h2>
+<h2>6. Your rights</h2>
 <p>You have the right to:</p>
 <ul>
-  <li><strong>Access</strong> your data: it's all in <code>chrome.storage.local</code>, viewable via DevTools.</li>
-  <li><strong>Export</strong> your favorites: Settings → Favorites → "Export JSON".</li>
+  <li><strong>Access</strong> your data: all of it is in <code>chrome.storage.local</code> on your own device. Section 1 lists every key and tells you how to read them.</li>
+  <li><strong>Export</strong> your data: Favorites → "Export backup". The file contains your favorite stations, the stations you added yourself (including the stream URLs you typed in or imported from a playlist) and any notes you wrote about stations, in your own words. It is written to your download folder as ordinary text and is not sent anywhere. Anything with access to that folder can read it, including backup or cloud-sync software, so keep or delete it as you would any other personal file.</li>
   <li><strong>Erase</strong> all your data: Settings → "Clear all local data". This wipes every key the extension uses.</li>
   <li><strong>Deactivate Premium</strong> on a device without losing your license key: Settings → "Deactivate Premium on this device".</li>
   <li><strong>Object</strong> to processing: simply uninstall the extension. We have no data to delete on our side because we don't store any.</li>
@@ -275,14 +295,14 @@
 </ul>
 <p>To exercise any right that requires action from us, write to <a href="mailto:rheysoft@gmail.com">rheysoft@gmail.com</a>. Note that because we store no personal data about you, we generally cannot act on access or erasure requests other than confirming this fact.</p>
 
-<h2>6. Legal basis (GDPR Art. 6)</h2>
+<h2>7. Legal basis (GDPR Art. 6)</h2>
 <p>Where the extension processes data on your behalf (e.g. fetching station lists from Radio Browser), the legal basis is <strong>legitimate interest</strong> (Art. 6(1)(f) GDPR) - namely, providing the functionality you installed the extension for. License verification involves a contractual relationship under Art. 6(1)(b) when you purchase Premium.</p>
 <p>We do not rely on consent (Art. 6(1)(a)) because we do not process any data beyond what is strictly necessary to deliver the requested functionality.</p>
 
-<h2>7. Children's privacy</h2>
+<h2>8. Children's privacy</h2>
 <p>The extension is not directed at children under 13. We do not knowingly collect data from children. Since we collect nothing from anyone, this is largely a formality.</p>
 
-<h2>8. Data retention</h2>
+<h2>9. Data retention</h2>
 <ul>
   <li><strong>Locally stored data</strong>: kept until you delete it (or uninstall the extension, which deletes everything).</li>
   <li><strong>License verification cache</strong>: refreshed every 7 days, replaced on each successful verify.</li>
@@ -290,14 +310,14 @@
   <li><strong>Gumroad records</strong>: governed by their retention policy.</li>
 </ul>
 
-<h2>9. Cross-border transfers</h2>
+<h2>10. Cross-border transfers</h2>
 <p>When you connect to Radio Browser or a station's stream server, your browser may exchange data with servers outside your country of residence. The extension itself does not transfer data across borders; the browser does, the same way it would when visiting any website.</p>
 <p>Gumroad operates in the United States. By purchasing Premium, you accept that license-verification requests will reach Gumroad's US-based infrastructure.</p>
 
-<h2>10. Changes to this policy</h2>
+<h2>11. Changes to this policy</h2>
 <p>We may update this policy when the extension's behavior changes (for example, if new functionality requires a new third-party service). The "Last updated" date at the top reflects the most recent change. We will not retroactively expand data processing for features that previously collected nothing.</p>
 
-<h2>11. Data controller and contact</h2>
+<h2>12. Data controller and contact</h2>
 <p>The controller responsible for the processing of personal data under the
 General Data Protection Regulation (GDPR) is:</p>
 <p>
