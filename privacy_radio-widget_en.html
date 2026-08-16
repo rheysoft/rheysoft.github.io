@@ -208,9 +208,13 @@
   <tbody>
     <tr><td>List of favorite stations</td><td>So your favorites survive browser restarts</td></tr>
     <tr><td>Last 10 played stations</td><td>"Recently played" list - cleared automatically when you close and restart the browser</td></tr>
+    <tr><td>Back/forward navigation stack (<code>playHistory</code>, <code>playHistoryIdx</code>)</td><td>Lets you step back and forward through the stations you moved between. Capped at 50 entries, and cleared when you close and restart the browser - deliberately, so that no durable record of your listening habits exists.</td></tr>
     <tr><td>Play counts per station</td><td>Sorting favorites by "most played"</td></tr>
-    <tr><td>Current player state (last station, volume, mute, list context, toolbar icon state <code>iconPlaying</code>)</td><td>Resume playback after restart, and show the correct play/pause state on the toolbar icon</td></tr>
+    <tr><td>Current player state (last station, volume, list context, toolbar icon state <code>iconPlaying</code>)</td><td>Resume playback after restart, and show the correct play/pause state on the toolbar icon</td></tr>
     <tr><td>UI preferences (theme, marquee toggle, logo toggle, pulse toggle, mode)</td><td>Remember your settings</td></tr>
+    <tr><td>Side panel tab last open (<code>activeTab</code>)</td><td>Reopen the side panel on the tab you were last using - Player, Browse, Favorites or Settings - instead of always returning to Player</td></tr>
+    <tr><td>Tab bar position (<code>tabBarPosition</code>)</td><td>Remember whether you placed the tab bar at the top or the bottom</td></tr>
+    <tr><td>Sort order of "My stations" (<code>customSortMode</code>)</td><td>Remember how you chose to sort the stations you added yourself - by date added, A-Z, or most played</td></tr>
     <tr><td>License key + verification cache (only if Premium activated)</td><td>Verify Premium without re-prompting on every launch</td></tr>
     <tr><td>Random per-install identifier (<code>machineId</code>)</td><td>Bind license cache to this browser install - never transmitted</td></tr>
     <tr><td>Cached list of Radio Browser API hostnames (<code>apiHosts</code>)</td><td>So a later session can reach a working mirror if the default one is unavailable. Written after a successful Radio Browser request. Contains no data about you.</td></tr>
