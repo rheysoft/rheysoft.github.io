@@ -9,124 +9,30 @@
   <link rel="icon" href="/assets/brand/favicon-lozenge.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/lozenge-icon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/lozenge-icon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon-180.png" />
+  <meta name="theme-color" content="#0e1a2e" />
   <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
   <style>
-    :root {
-      --bg:       #0a0d13;
-      --bg2:      #0e1a2e;
-      --bg3:      #1a2e4a;
-      --accent:   #c8a84b;
-      --accent-lt:#ffe8a0;
-      --accent-dk:#9c7c2a;
-      --text:     #e8e6e0;
-      --text-soft:#d0cec8;
-      --muted:    #9a9893;
-      --border:   rgba(200, 168, 75, .18);
-      --border-strong: rgba(200, 168, 75, .35);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 16px;
-      line-height: 1.65;
-      min-height: 100vh;
-    }
-    .wrap {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 56px 24px 80px;
-    }
-    header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 28px;
-      margin-bottom: 36px;
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--accent);
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 13px;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      transition: color .15s;
-    }
-    .brand:hover { color: var(--accent-lt); }
-    .brand svg { width: 11px; height: 11px; }
-    h1 {
-      font-family: 'Source Serif 4', serif;
-      font-weight: 600;
-      font-size: 30px;
-      letter-spacing: -0.01em;
-      margin-top: 18px;
-      color: var(--text);
-    }
-    .meta {
-      display: block;
-      margin-top: 10px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-    }
-    h2 {
-      font-family: 'Source Serif 4', serif;
-      font-weight: 600;
-      font-size: 21px;
-      color: var(--accent);
-      margin-top: 44px;
-      margin-bottom: 14px;
-    }
-    h3 {
-      font-family: 'Source Serif 4', serif;
-      font-weight: 500;
-      font-size: 17px;
-      color: var(--text);
-      margin-top: 26px;
-      margin-bottom: 8px;
-    }
-    p, ul, ol { margin-bottom: 14px; color: var(--text-soft); }
-    ul, ol { padding-left: 22px; }
-    li { margin-bottom: 6px; }
-    a {
-      color: var(--accent);
-      text-decoration: underline;
-      text-decoration-color: rgba(200, 168, 75, .35);
-      text-underline-offset: 3px;
-      transition: color .15s;
-    }
-    a:hover { color: var(--accent-lt); }
     strong { color: var(--text); font-weight: 600; }
-    code, .mono {
-      font-family: 'JetBrains Mono', monospace;
+    code {
+      font-family: var(--mono);
       font-size: 0.92em;
-      background: var(--bg2);
+      background: rgba(0,0,0,0.25);
       border: 1px solid var(--border);
       padding: 1px 6px;
       border-radius: 3px;
-      color: var(--accent);
+      color: var(--accent2);
     }
     .tldr {
-      background: var(--bg2);
+      background: var(--surface);
       border-left: 3px solid var(--accent);
       padding: 18px 22px;
       margin: 26px 0;
       border-radius: 0 6px 6px 0;
     }
-    .tldr h2 {
-      margin: 0 0 10px 0;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-    }
+    .tldr h2 { margin: 0 0 0.6rem; }
     .tldr ul { margin-bottom: 0; }
     table {
       width: 100%;
@@ -139,54 +45,43 @@
       padding: 10px 12px;
       border-bottom: 1px solid var(--border);
       vertical-align: top;
-      color: var(--text-soft);
+      color: var(--text);
     }
     th {
       color: var(--accent);
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--mono);
       font-size: 11px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      border-bottom: 1px solid var(--border-strong);
+      border-bottom: 1px solid rgba(200,168,75,0.35);
     }
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 36px 0;
-    }
-    footer {
-      margin-top: 56px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-    }
-    footer a { color: var(--accent); }
     @media (max-width: 600px) {
-      .wrap { padding: 40px 18px 60px; }
-      h1 { font-size: 26px; }
-      h2 { font-size: 19px; }
       table { font-size: 13px; }
       th, td { padding: 8px 8px; }
+      .table-scroll { overflow-x: auto; }
     }
   </style>
 </head>
 <body>
-<div class="wrap">
 
-<header>
-  <a href="https://rheysoft.com/" class="brand">
-    <svg viewBox="0 0 10 10" aria-hidden="true">
-      <polygon points="5,0 10,5 5,10 0,5" fill="currentColor"/>
-    </svg>
-    rheysoft
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="rheysoft – Home">
+    <img src="/assets/brand/lockup-horizontal-720x206.png" alt="rheysoft" width="119" height="34" />
   </a>
-  <h1>Privacy Policy - Radio Widget
-    <span class="meta">Version 1.2.0 · Effective 2026-05-26 · Last updated November 2026</span>
-  </h1>
-</header>
+  <ul class="nav-links">
+    <li><a href="/impressum.html">Impressum</a></li>
+    <li><a href="/datenschutz.html">Datenschutz</a></li>
+    <li><a href="/privacy.html">Privacy</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<div class="page-header">
+  <h1>Privacy Policy - Radio Widget</h1>
+  <div class="meta">Version 1.2.0 · Effective 2026-05-26 · Last updated November 2026</div>
+</div>
 
 <p>This privacy policy describes how the <strong>Radio Widget</strong> browser extension ("the extension") handles your data. It is published by <strong>rheysoft UG (haftungsbeschränkt)</strong>, reachable at <a href="mailto:rheysoft@gmail.com">rheysoft@gmail.com</a>. The extension is distributed via Firefox Add-ons (AMO) and the Microsoft Edge Add-ons store.</p>
 
@@ -203,6 +98,7 @@
 
 <h2>1. What the extension stores locally</h2>
 <p>The extension uses <code>chrome.storage.local</code> to persist the following inside your browser. Two things from it are sent elsewhere: the ID of a station from the directory, to Radio Browser when that station starts (see 3.1), and your license key, to Gumroad when Premium is verified (see 3.2). Everything else stays on your device. The web addresses stored here - a station's stream or logo URL, a Radio Browser server name - are used only to connect to that address, as section 3 describes.</p>
+<div class="table-scroll">
 <table>
   <thead><tr><th>Stored data</th><th>Purpose</th></tr></thead>
   <tbody>
@@ -232,6 +128,7 @@
     <tr><td>Saved station list (<code>browseCache</code>)</td><td>Show the default station list - the directory's most-voted stations, before any search or filter - instead of an empty page when the station directory cannot be reached, and give Radio Roulette something to pick from then. It holds that list's public station data from the directory and the date and time the list was last loaded; it never holds your search text or the country or genre you filtered by. It is replaced the next time the default list loads from the directory, removed by "Clear all local data", and not included in a backup export.</td></tr>
   </tbody>
 </table>
+</div>
 <p>You can read this data yourself. The parts that are yours - favorites, the stations you added, your notes, your favorite groups and your per-station volumes - come out in readable form via Favorites → "Export backup" (see section 6). For the raw contents of every key, open the extension's developer tools and run <code>chrome.storage.local.get(null, console.log)</code> in their console; the command works the same in Firefox and Edge. In Firefox, open <code>about:debugging</code>, choose This Firefox, and click Inspect next to Radio Widget. In Edge, open the developer tools on the extension's side panel or popup. Beyond that we deliberately do not name menu paths: whether extension storage gets its own panel in the developer tools differs between Firefox, Edge and Chrome and changes between browser versions.</p>
 
 <h2>2. What the extension does NOT store or collect</h2>
@@ -337,10 +234,16 @@ General Data Protection Regulation (GDPR) is:</p>
 (Kleinunternehmer); no VAT charged.</p>
 <p>Imprint: <a href="https://rheysoft.com/impressum.html">rheysoft.com/impressum.html</a></p>
 
-<footer>
-  &copy; 2026 rheysoft UG (haftungsbeschränkt) · <a href="https://rheysoft.com/">rheysoft.com</a>
-</footer>
+</main>
 
-</div>
+<footer>
+  <p>
+    <a href="/impressum.html">Impressum</a><span class="sep" aria-hidden="true">·</span><a href="/datenschutz.html">Datenschutz</a><span class="sep" aria-hidden="true">·</span><a href="/privacy.html">Privacy Policy</a>
+  </p>
+  <p>
+    Product privacy policies: <a href="/privacy_radio-widget_en.html">Radio Widget</a>
+  </p>
+  <p>&copy; 2026 rheysoft UG (haftungsbeschränkt) · <a href="https://rheysoft.com/">rheysoft.com</a></p>
+</footer>
 </body>
 </html>

@@ -11,52 +11,8 @@
   <meta name="robots" content="noindex, follow" />
   <title>Datenschutzerklärung – rheysoft</title>
   <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
   <style>
-    :root {
-      --bg:        #0e1a2e;
-      --surface:   #1a2e4a;
-      --border:    rgba(200,168,75,0.18);
-      --text:      #e8eaf0;
-      --muted:     #4e5767;
-      --accent:    #c8a84b;
-      --accent2:   #ffe8a0;
-      --warn:      #f59e0b;
-      --ok:        #22c55e;
-      --mono:      'JetBrains Mono', monospace;
-      --serif:     'Source Serif 4', Georgia, serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--serif);
-      font-weight: 300;
-      font-size: 1rem;
-      line-height: 1.75;
-    }
-
-    body > nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(14, 26, 46, 0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 56px;
-    }
-    .nav-brand { text-decoration: none; display: flex; align-items: center; flex-shrink: 0; }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-
-    main { max-width: 760px; margin: 0 auto; padding: 3.5rem 2rem 6rem; }
-
-    .page-header { margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
-    .page-header .label { font-family: var(--mono); font-size: 0.7rem; color: var(--accent2); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem; }
-    .page-header h1 { font-size: 2rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
-    .page-header .meta { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
-
     /* TOC */
     .toc {
       background: var(--surface);
@@ -69,41 +25,8 @@
     .toc-title { font-family: var(--mono); font-size: 0.7rem; color: var(--accent2); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
     .toc ol { margin-left: 1.25rem; }
     .toc li { margin-bottom: 0.25rem; }
-    .toc a { color: var(--accent); text-decoration: none; }
-    .toc a:hover { text-decoration: underline; }
 
-    section { margin-bottom: 2.5rem; scroll-margin-top: 70px; }
-    h2 { font-family: var(--mono); font-size: 0.8rem; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
-    h2::before { content: ''; display: inline-block; width: 3px; height: 1em; background: var(--accent); border-radius: 2px; }
-    h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-top: 1.25rem; margin-bottom: 0.4rem; }
-    p { margin-bottom: 0.75rem; }
-    p:last-child { margin-bottom: 0; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul { margin: 0.5rem 0 0.75rem 1.5rem; }
-    li { margin-bottom: 0.2rem; }
-
-    .data-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1rem 1.25rem;
-      font-size: 0.875rem;
-      margin: 0.75rem 0;
-    }
-    .data-block strong { color: var(--accent2); font-weight: 600; }
-
-    .ok-box {
-      background: rgba(34, 197, 94, 0.07);
-      border: 1px solid rgba(34, 197, 94, 0.25);
-      border-radius: 6px;
-      padding: 0.9rem 1.25rem;
-      font-size: 0.875rem;
-    }
-    .ok-box .ok-label { font-family: var(--mono); font-size: 0.7rem; color: var(--ok); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
-
-    .info-box { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.25rem; font-size: 0.9rem; }
-
+    /* RIGHTS GRID */
     .rights-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -116,38 +39,25 @@
       border-radius: 6px;
       padding: 0.9rem 1rem;
     }
-    .right-card .art { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.08em; }
+    .right-card .art { font-family: var(--mono); font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.08em; }
     .right-card .name { font-weight: 600; font-size: 0.9rem; color: var(--text); margin: 0.1rem 0 0.25rem; }
-    .right-card p { font-size: 0.8rem; color: var(--muted); margin: 0; line-height: 1.5; }
-
-    hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
-
-    footer { border-top: 1px solid var(--border); padding: 1.25rem 2rem; text-align: center; font-family: var(--mono); font-size: 0.7rem; color: var(--muted); }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--accent); }
+    .right-card p { font-size: 0.8rem; color: var(--text-dim); margin: 0; line-height: 1.5; }
 
     @media (max-width: 600px) {
-      main { padding: 2rem 1.25rem 4rem; }
-      nav { padding: 0 1.25rem; }
-      .page-header h1 { font-size: 1.5rem; }
       .rights-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-brand" aria-label="rheysoft – Home">
-    <img src="/assets/brand/lockup-horizontal-720x206.png"
-         alt="rheysoft"
-         height="34"
-         style="height:34px;width:auto;display:block;" />
+<nav class="site-nav" aria-label="Hauptnavigation">
+  <a href="/" class="nav-brand" aria-label="rheysoft – Home">
+    <img src="/assets/brand/lockup-horizontal-720x206.png" alt="rheysoft" width="119" height="34" />
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="impressum.html">Impressum</a></li>
-    <li><a href="datenschutz.html" class="active">Datenschutz</a></li>
-    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="/impressum.html">Impressum</a></li>
+    <li><a href="/datenschutz.html" class="active" aria-current="page">Datenschutz</a></li>
+    <li><a href="/privacy.html">Privacy</a></li>
   </ul>
 </nav>
 
@@ -297,7 +207,7 @@
         eingesetzt. Es findet kein Profiling der Besucher statt.
       </p>
     </div>
-    <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--muted);">
+    <p class="note">
       GitHub Pages kann im Rahmen des Hostings Cookies setzen. Details hierzu entnehmen Sie
       der Datenschutzerklärung von GitHub:
       <a href="https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">
@@ -346,7 +256,7 @@
         <p>Recht auf Widerspruch gegen die Verarbeitung auf Basis berechtigter Interessen.</p>
       </div>
     </div>
-    <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--muted);">
+    <p class="note">
       Wir beantworten Anfragen in der Regel innerhalb von 30 Tagen (gesetzliche Frist nach Art. 12 Abs. 3 DSGVO).
     </p>
   </section>
@@ -383,16 +293,13 @@
 </main>
 
 <footer>
-  <a href="index.html">rheysoft</a> &nbsp;·&nbsp;
-  <a href="impressum.html">Impressum</a> &nbsp;·&nbsp;
-  <a href="datenschutz.html">Datenschutz</a> &nbsp;·&nbsp;
-  <a href="privacy.html">Privacy Policy</a>
-  <br /><br />
-  Produkt-Datenschutzerklärungen: &nbsp;
-  <a href="privacy_radio-widget_en.html">Radio Widget</a> &nbsp;·&nbsp;
-  <a href="privacy-session-depot.html">Session Depot</a>
-  <br /><br />
-  © 2026 rheysoft UG (haftungsbeschränkt) · Alle Rechte vorbehalten
+  <p>
+    <a href="/impressum.html">Impressum</a><span class="sep" aria-hidden="true">·</span><a href="/datenschutz.html">Datenschutz</a><span class="sep" aria-hidden="true">·</span><a href="/privacy.html">Privacy Policy</a>
+  </p>
+  <p>
+    Produkt-Datenschutzerklärungen: <a href="/privacy_radio-widget_en.html">Radio Widget</a><span class="sep" aria-hidden="true">·</span><a href="/privacy-session-depot.html">Session Depot</a>
+  </p>
+  <p>© 2026 rheysoft UG (haftungsbeschränkt) · Alle Rechte vorbehalten</p>
 </footer>
 
 </body>
