@@ -34,7 +34,7 @@ body {
   flex-direction: column;
 }
 
-/* LINKS: never underlined; marked by a tinted gold box with a border */
+/* LINKS: marked by a tinted gold box with a border, no text-decoration in any state */
 a {
   color: var(--accent);
   text-decoration: none;
