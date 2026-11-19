@@ -3,216 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung / Privacy Policy - Session Depot | rheysoft</title>
   <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="no-referrer" />
   <link rel="icon" href="/assets/brand/favicon-lozenge.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/lozenge-icon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/lozenge-icon-16.png" />
-
-  <title>Datenschutzerklärung / Privacy Policy - Session Depot | rheysoft</title>
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon-180.png" />
+  <meta name="theme-color" content="#0e1a2e" />
   <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
   <style>
-    :root {
-      --bg:        #0a0d13;
-      --navy:      #0e1a2e;
-      --navy-mid:  #1a2e4a;
-      --gold:      #c8a84b;
-      --gold-lite: #ffe8a0;
-      --text:      #d6d8de;
-      --text-dim:  #8a8f9e;
-      --border:    #1e2d44;
-      --font-body: 'Source Serif 4', Georgia, serif;
-      --font-mono: 'JetBrains Mono', 'Courier New', monospace;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 1rem;
-      line-height: 1.75;
-      padding: 0 1rem;
-    }
-
-    a { color: var(--gold); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    header {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 2.5rem 0 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .wordmark {
-      font-family: var(--font-mono);
-      font-size: 1.15rem;
-      color: var(--gold);
-      letter-spacing: .04em;
-    }
-    .wordmark span { color: var(--text-dim); font-size: .85rem; margin-left: .5rem; }
-
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 2.5rem 0 4rem;
-    }
-
-    .lang-section {
-      border-top: 2px solid var(--navy-mid);
-      padding-top: 2.5rem;
-      margin-top: 3rem;
-    }
-    .lang-badge {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: .72rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--gold);
-      background: var(--navy);
-      border: 1px solid var(--navy-mid);
-      border-radius: 4px;
-      padding: .2rem .6rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .lang-nav {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 1.25rem 0 0;
-      display: flex;
-      gap: .75rem;
-      font-family: var(--font-mono);
-      font-size: .8rem;
-    }
-    .lang-nav a {
-      display: inline-block;
-      color: var(--gold);
-      background: var(--navy);
-      border: 1px solid var(--navy-mid);
-      border-radius: 4px;
-      padding: .35rem .8rem;
-      letter-spacing: .04em;
-    }
-    .lang-nav a:hover {
-      background: var(--navy-mid);
-      text-decoration: none;
-    }
-
-    h1 {
-      font-size: 1.75rem;
-      color: var(--gold-lite);
-      font-weight: 600;
-      margin-bottom: .5rem;
-    }
-    h2 {
-      font-size: 1.1rem;
-      color: var(--gold);
-      font-weight: 600;
-      margin: 2rem 0 .6rem;
-      padding-bottom: .3rem;
-      border-bottom: 1px solid var(--border);
-    }
-    h3 {
-      font-size: .95rem;
-      color: var(--text);
-      font-weight: 600;
-      margin: 1.2rem 0 .4rem;
-    }
-    p { margin-bottom: .9rem; }
-    ul { list-style: none; padding: 0; margin-bottom: .9rem; }
-    ul li { padding-left: 1.2rem; position: relative; margin-bottom: .25rem; }
-    ul li::before { content: "-"; position: absolute; left: 0; color: var(--gold); }
-
-    .meta-box {
-      background: var(--navy);
+    strong { color: var(--text); font-weight: 600; }
+    code {
+      font-family: var(--mono);
+      font-size: 0.92em;
+      background: rgba(0,0,0,0.25);
       border: 1px solid var(--border);
-      border-left: 3px solid var(--gold);
-      border-radius: 6px;
+      padding: 1px 6px;
+      border-radius: 3px;
+      color: var(--accent2);
+    }
+
+    /* LANGUAGE SWITCH AND SECTIONS (this page holds German and English) */
+    .lang-nav {
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+      margin-bottom: 2.5rem;
+      font-family: var(--mono); font-size: 0.75rem;
+    }
+    .lang-section + .lang-section {
+      margin-top: 4rem; padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* VERSION BOX */
+    .meta-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
       padding: 1rem 1.25rem;
       margin-bottom: 2rem;
-      font-size: .88rem;
+      font-family: var(--mono); font-size: 0.8rem;
       color: var(--text-dim);
     }
-    .meta-box strong { color: var(--text); }
 
-    .data-table {
+    /* DATA TABLE */
+    table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1rem 0 1.5rem;
-      font-size: .88rem;
+      margin: 16px 0 22px;
+      font-size: 14.5px;
     }
-    .data-table th {
-      background: var(--navy);
-      color: var(--gold);
-      font-family: var(--font-mono);
-      font-size: .78rem;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      padding: .6rem .8rem;
+    th, td {
       text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-    .data-table td {
-      padding: .6rem .8rem;
+      padding: 10px 12px;
       border-bottom: 1px solid var(--border);
       vertical-align: top;
+      color: var(--text);
     }
-    .data-table tr:last-child td { border-bottom: none; }
+    th {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid rgba(200,168,75,0.35);
+    }
     .tag {
       display: inline-block;
-      font-family: var(--font-mono);
-      font-size: .72rem;
-      background: var(--navy-mid);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      padding: .1rem .4rem;
+      font-family: var(--mono); font-size: 0.72rem;
+      border: 1px solid var(--border); border-radius: 3px;
+      padding: 0.1rem 0.4rem;
       color: var(--text-dim);
     }
-    .tag.local  { color: #6fcf97; border-color: #1a3a28; }
-    .tag.remote { color: #f2994a; border-color: #3a2a1a; }
+    .tag.local  { color: var(--ok);   border-color: rgba(34,197,94,0.35); }
+    .tag.remote { color: var(--warn); border-color: rgba(245,158,11,0.35); }
 
+    /* RIGHTS */
     .rights-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: .6rem 1.5rem;
+      gap: 0.6rem 1.5rem;
       margin-bottom: 1rem;
     }
-    @media (max-width: 540px) { .rights-grid { grid-template-columns: 1fr; } }
+    .rights-ref { color: var(--text-dim); font-size: 0.88rem; }
 
-    footer {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 1.5rem 0 3rem;
-      border-top: 1px solid var(--border);
-      font-size: .82rem;
-      color: var(--text-dim);
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+    /* Narrow screens: one block per table row, header row kept for screen
+       readers only; the first cell (the category) leads each block. */
+    @media (max-width: 600px) {
+      table { font-size: 13px; }
+      .table-scroll { overflow-x: auto; }
+      .table-scroll table, .table-scroll tbody,
+      .table-scroll tr, .table-scroll td { display: block; width: 100%; }
+      .table-scroll thead {
+        position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip-path: inset(50%); white-space: nowrap;
+      }
+      .table-scroll tr { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+      .table-scroll td { border: 0; padding: 0.15rem 0; overflow-wrap: break-word; }
+      .table-scroll td:first-child { font-weight: 600; color: var(--accent2); }
+      .rights-grid { grid-template-columns: 1fr; }
     }
-    footer a { color: var(--text-dim); }
-    footer a:hover { color: var(--gold); }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="wordmark">rheysoft <span>/ Session Depot</span></div>
-</header>
-
-<nav class="lang-nav" aria-label="Sprache / Language">
-  <a href="#de">Deutsch</a>
-  <a href="#en">English</a>
+<nav class="site-nav" aria-label="Hauptnavigation">
+  <a href="/" class="nav-brand" aria-label="rheysoft - Home">
+    <img src="/assets/brand/lockup-horizontal-720x206.png" alt="rheysoft" width="119" height="34" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="/impressum.html">Impressum</a></li>
+    <li><a href="/datenschutz.html">Datenschutz</a></li>
+    <li><a href="/privacy.html">Privacy</a></li>
+  </ul>
 </nav>
 
 <main>
 
-  <!-- Deutsch -->
-  <div class="lang-badge" id="de">Deutsch</div>
+  <nav class="lang-nav" aria-label="Sprache / Language">
+    <a href="#de">Deutsch</a>
+    <a href="#en">English</a>
+  </nav>
 
-  <h1>Datenschutzerklärung</h1>
+
+  <!-- Deutsch -->
+  <section class="lang-section" id="de" lang="de">
+  <div class="page-header">
+    <div class="label">Deutsch</div>
+    <h1>Datenschutzerklärung</h1>
+  </div>
   <p>Session Depot ist eine Browser-Extension. Wo sich ihr Verhalten in Firefox,
   Chrome und Edge unterscheidet, ist das im jeweiligen Abschnitt angegeben.
   Diese Datenschutzerklärung erklärt, welche Daten bei der Nutzung der Extension
@@ -252,7 +174,8 @@
 
   <h2>3. Verarbeitete Daten im Überblick</h2>
 
-  <table class="data-table">
+  <div class="table-scroll">
+  <table>
     <thead>
       <tr>
         <th>Datenkategorie</th>
@@ -356,6 +279,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
 
   <h2>4. Einzelne Verarbeitungsvorgänge</h2>
 
@@ -634,27 +558,27 @@
   <div class="rights-grid">
     <div>
       <strong>Auskunftsrecht</strong><br />
-      <span style="color:var(--text-dim);font-size:.88rem">Art. 15 DSGVO</span>
+      <span class="rights-ref">Art. 15 DSGVO</span>
     </div>
     <div>
       <strong>Berichtigungsrecht</strong><br />
-      <span style="color:var(--text-dim);font-size:.88rem">Art. 16 DSGVO</span>
+      <span class="rights-ref">Art. 16 DSGVO</span>
     </div>
     <div>
       <strong>Recht auf Löschung</strong><br />
-      <span style="color:var(--text-dim);font-size:.88rem">Art. 17 DSGVO</span>
+      <span class="rights-ref">Art. 17 DSGVO</span>
     </div>
     <div>
       <strong>Einschränkung der Verarbeitung</strong><br />
-      <span style="color:var(--text-dim);font-size:.88rem">Art. 18 DSGVO</span>
+      <span class="rights-ref">Art. 18 DSGVO</span>
     </div>
     <div>
       <strong>Datenübertragbarkeit</strong><br />
-      <span style="color:var(--text-dim);font-size:.88rem">Art. 20 DSGVO</span>
+      <span class="rights-ref">Art. 20 DSGVO</span>
     </div>
     <div>
       <strong>Widerspruchsrecht</strong><br />
-      <span style="color:var(--text-dim);font-size:.88rem">Art. 21 DSGVO</span>
+      <span class="rights-ref">Art. 21 DSGVO</span>
     </div>
   </div>
   <p>Da Session-Daten ausschließlich lokal auf Ihrem Gerät gespeichert werden,
@@ -680,11 +604,14 @@
   letzten Änderung ist oben angegeben. Wir empfehlen, diese Seite regelmäßig
   aufzurufen.</p>
 
-  <!-- English -->
-  <div class="lang-section" id="en">
-    <div class="lang-badge">English</div>
+  </section>
 
-    <h1>Privacy Policy</h1>
+  <!-- English -->
+  <section class="lang-section" id="en" lang="en">
+    <div class="page-header">
+      <div class="label">English</div>
+      <h1>Privacy Policy</h1>
+    </div>
     <p>Session Depot is a browser extension. Where its behavior differs between
     Firefox, Chrome and Edge, this is stated in the relevant section.
     This Privacy Policy explains what data is processed when you use the extension
@@ -723,7 +650,8 @@
 
     <h2>3. Data Processed</h2>
 
-    <table class="data-table">
+    <div class="table-scroll">
+  <table>
       <thead>
         <tr>
           <th>Category</th>
@@ -823,6 +751,7 @@
         </tr>
       </tbody>
     </table>
+  </div>
 
     <h2>4. Individual Processing Operations</h2>
 
@@ -1077,27 +1006,27 @@
     <div class="rights-grid">
       <div>
         <strong>Right of access</strong><br />
-        <span style="color:var(--text-dim);font-size:.88rem">Art. 15 GDPR</span>
+        <span class="rights-ref">Art. 15 GDPR</span>
       </div>
       <div>
         <strong>Right to rectification</strong><br />
-        <span style="color:var(--text-dim);font-size:.88rem">Art. 16 GDPR</span>
+        <span class="rights-ref">Art. 16 GDPR</span>
       </div>
       <div>
         <strong>Right to erasure</strong><br />
-        <span style="color:var(--text-dim);font-size:.88rem">Art. 17 GDPR</span>
+        <span class="rights-ref">Art. 17 GDPR</span>
       </div>
       <div>
         <strong>Restriction of processing</strong><br />
-        <span style="color:var(--text-dim);font-size:.88rem">Art. 18 GDPR</span>
+        <span class="rights-ref">Art. 18 GDPR</span>
       </div>
       <div>
         <strong>Data portability</strong><br />
-        <span style="color:var(--text-dim);font-size:.88rem">Art. 20 GDPR</span>
+        <span class="rights-ref">Art. 20 GDPR</span>
       </div>
       <div>
         <strong>Right to object</strong><br />
-        <span style="color:var(--text-dim);font-size:.88rem">Art. 21 GDPR</span>
+        <span class="rights-ref">Art. 21 GDPR</span>
       </div>
     </div>
     <p>Since session data is stored exclusively on your device, you can view,
@@ -1120,14 +1049,18 @@
     <p>This Privacy Policy may be updated for material changes to the extension
     (e.g. new features involving data access). The date of the last update is
     shown above. We recommend checking this page periodically.</p>
-  </div>
+  </section>
 
 </main>
 
 <footer>
-  <a href="https://rheysoft.com/impressum.html">Impressum</a>
-  <a href="https://rheysoft.com/datenschutz.html">Datenschutz (rheysoft)</a>
-  <span>&copy; 2026 rheysoft UG (haftungsbeschränkt)</span>
+  <p>
+    <a href="/impressum.html">Impressum</a><span class="sep" aria-hidden="true">·</span><a href="/datenschutz.html">Datenschutz</a><span class="sep" aria-hidden="true">·</span><a href="/privacy.html">Privacy Policy</a>
+  </p>
+  <p>
+    Produkt-Datenschutzerklärungen: <a href="/privacy_radio-widget_en.html">Radio Widget</a>
+  </p>
+  <p>© 2026 rheysoft UG (haftungsbeschränkt) · Alle Rechte vorbehalten</p>
 </footer>
 
 </body>
