@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/lozenge-icon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/lozenge-icon-16.png" />
 
-  <title>Datenschutzerklärung / Privacy Policy — Session Depot | rheysoft</title>
+  <title>Datenschutzerklärung / Privacy Policy - Session Depot | rheysoft</title>
   <link rel="stylesheet" href="/fonts.css">
   <style>
     :root {
@@ -123,7 +123,7 @@
     p { margin-bottom: .9rem; }
     ul { list-style: none; padding: 0; margin-bottom: .9rem; }
     ul li { padding-left: 1.2rem; position: relative; margin-bottom: .25rem; }
-    ul li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
+    ul li::before { content: "-"; position: absolute; left: 0; color: var(--gold); }
 
     .meta-box {
       background: var(--navy);
@@ -209,9 +209,7 @@
 
 <main>
 
-  <!-- ════════════════════════════════════════════
-       DEUTSCH
-       ════════════════════════════════════════════ -->
+  <!-- Deutsch -->
   <div class="lang-badge" id="de">Deutsch</div>
 
   <h1>Datenschutzerklärung</h1>
@@ -220,9 +218,9 @@
   verarbeitet werden und welche Rechte Sie als betroffene Person haben.</p>
 
   <div class="meta-box">
-    <strong>Stand:</strong> 17.09.2026 &nbsp;|&nbsp;
-    <strong>Version:</strong> Session Depot 1.0.2 &nbsp;|&nbsp;
-    <strong>Geltungsbereich:</strong> Browser-Extension (Firefox, Chrome, Edge)
+    <strong>Stand:</strong> [PUBLICATION-DATE] &nbsp;|&nbsp;
+    <strong>Geltungsbereich:</strong> Session Depot, Version 1.1.0 und später,
+    bis zu einer Änderung dieser Datenschutzerklärung
   </div>
 
   <h2>1. Verantwortliche Stelle</h2>
@@ -238,11 +236,18 @@
   <h2>2. Grundsatz: Lokale Datenspeicherung</h2>
   <p>Session Depot ist nach dem Prinzip <strong>Privacy by Design</strong> entwickelt.
   Die Extension benötigt keinen Account, keine Registrierung und übermittelt
-  Ihre Browsing-Daten (gespeicherte Sessions, Tab-URLs, Lesezeichen-Warteschlange)
+  Ihre Browsing-Daten (gespeicherte Sessions, Tab-URLs, Leseliste)
   <strong>zu keinem Zeitpunkt an externe Server</strong>.</p>
-  <p>Alle Nutzungsdaten werden ausschließlich auf Ihrem Gerät im lokalen
-  Browser-Speicher (<code>chrome.storage.local</code>) gespeichert und bleiben
-  dort unter Ihrer vollständigen Kontrolle.</p>
+  <p>Alle Nutzungsdaten werden ausschließlich auf Ihrem Gerät gespeichert: im
+  lokalen Browser-Speicher der Extension (<code>chrome.storage.local</code>),
+  für den Fenster-Zwischenspeicher im Sitzungsspeicher des Browsers
+  (<code>chrome.storage.session</code>, siehe Abschnitt 4.6) und, wenn Sie ein
+  Backup oder einen Export speichern, in einer Datei an dem Ort, den Sie
+  wählen. Die Daten bleiben unter Ihrer vollständigen Kontrolle.</p>
+  <p>Die Extension enthält keine Analyse- oder Tracking-Funktionen und lädt keinen
+  Code, keine Skripte und keine Schriftarten aus dem Netz. Der Code der Extension
+  setzt und liest keine Cookies. Die einzige Netzwerkanfrage der Extension ist die
+  Lizenzprüfung (Abschnitt 4.2).</p>
 
   <h2>3. Verarbeitete Daten im Überblick</h2>
 
@@ -258,38 +263,94 @@
     <tbody>
       <tr>
         <td>Session-Daten</td>
-        <td>Tab-URLs, Seitentitel, Tab-Gruppen, Notizen</td>
+        <td>Name, Beschreibung, Tags, Tab-URLs, Seitentitel, Tab-Gruppen, Notizen,
+        eingebettete Seitensymbole; auch automatisch angelegte Sessions
+        (Abschnitt 4.5)</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
       <tr>
         <td>Arbeitsbereiche (Workspaces)</td>
-        <td>Workspace-Namen, Farben, Zuordnungen (Premium)</td>
+        <td>Workspace-Namen, Farben, Zuordnungen (bis zu 2 kostenlos, weitere mit
+        Premium)</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
       <tr>
-        <td>Lesezeichen-Warteschlange</td>
-        <td>URL, Seitentitel gespeicherter Links</td>
+        <td>Leseliste</td>
+        <td>URL, Seitentitel, eingebettetes Seitensymbol, Notiz, Gelesen-Status,
+        Zeitpunkte des Zurückstellens (Abschnitt 4.8)</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
       <tr>
         <td>Einstellungen</td>
-        <td>Theme, Sprache, Auto-Save-Konfiguration</td>
+        <td>Theme (auch eigene Farben), Sprache, Auto-Save- und Backup-Konfiguration,
+        Wiederherstellungs-Modus, Focus-Mode-Optionen</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
       <tr>
-        <td>Lizenzschlüssel (Premium)</td>
-        <td>Von Gumroad erhaltener Lizenzschlüssel</td>
+        <td>Lizenzdaten (Premium)</td>
+        <td>Lizenzschlüssel, Prüfstatus und Prüfzeitpunkt, Erstattungsvermerk,
+        Aktivierungsvermerke dieses Geräts; keine E-Mail-Adresse
+        (Abschnitt 4.2)</td>
         <td>Lokal auf Ihrem Gerät</td>
-        <td><span class="tag remote">An Gumroad übermittelt</span></td>
+        <td><span class="tag remote">Schlüssel an Gumroad übermittelt</span></td>
       </tr>
       <tr>
         <td>Automatisches Backup (Premium, optional)</td>
-        <td>JSON-Abbild aller Sessions (max. 5, rotierend)</td>
+        <td>Tägliches JSON-Abbild von Sessions, Leseliste, Arbeitsbereichen und
+        Einstellungen, ohne Lizenzdaten (höchstens 5, rotierend)</td>
         <td>Lokal auf Ihrem Gerät</td>
+        <td><span class="tag local">Nur lokal</span></td>
+      </tr>
+      <tr>
+        <td>Wiederherstellungs-Snapshot</td>
+        <td>Adresse, Titel, Tab-Gruppe, eingebettetes Seitensymbol und Angabe, ob
+        angeheftet oder aktiv, je Tab der offenen normalen, nicht privaten Fenster;
+        Zeitpunkt der Speicherung. Nur solange "Tabs beim Schließen eines Fensters
+        speichern" eingeschaltet ist. Speicherdauer: bis zur nächsten Speicherung,
+        längstens bis zum nächsten Browserstart oder bis zum Ausschalten der Option
+        (Abschnitt 4.5)</td>
+        <td>Lokal auf Ihrem Gerät</td>
+        <td><span class="tag local">Nur lokal</span></td>
+      </tr>
+      <tr>
+        <td>Wiederherstellungs-Metadaten</td>
+        <td>Zeitpunkt des zuletzt verarbeiteten Snapshots (Zeitstempel), damit
+        derselbe Snapshot nicht zweimal als Session gespeichert wird; keine
+        Browsing-Daten. Speicherdauer: bis zum nächsten verarbeiteten Snapshot oder
+        bis zur Deinstallation der Extension</td>
+        <td>Lokal auf Ihrem Gerät</td>
+        <td><span class="tag local">Nur lokal</span></td>
+      </tr>
+      <tr>
+        <td>Focus-Mode-Zustand</td>
+        <td>Tabs der Fenster vor dem Aktivieren (für die Rückkehr), Fenster-IDs,
+        gewählter Arbeitsbereich. Speicherdauer: vom Aktivieren bis zum Beenden
+        des Focus Mode, auch über einen Neustart des Browsers hinweg</td>
+        <td>Lokal auf Ihrem Gerät</td>
+        <td><span class="tag local">Nur lokal</span></td>
+      </tr>
+      <tr>
+        <td>Fenster-Zwischenspeicher</td>
+        <td>Tab-Titel, Tab-Adressen, Tab-Gruppen und eingebettete Seitensymbole der
+        offenen normalen Fenster; Fenstertyp und Privat-Kennzeichen
+        (Abschnitt 4.6)</td>
+        <td>Sitzungsspeicher des Browsers, beim Beenden geleert</td>
+        <td><span class="tag local">Nur lokal</span></td>
+      </tr>
+      <tr>
+        <td>Bedienzustand</td>
+        <td>Zuletzt geöffneter Reiter der Seitenleiste</td>
+        <td>Sitzungsspeicher des Browsers, beim Beenden geleert</td>
+        <td><span class="tag local">Nur lokal</span></td>
+      </tr>
+      <tr>
+        <td>Backup- und Export-Dateien</td>
+        <td>Von Ihnen gespeicherte Backups und exportierte Sessions (Abschnitt 4.3)</td>
+        <td>Datei an dem von Ihnen gewählten Ort</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
     </tbody>
@@ -303,79 +364,257 @@
   Ihrem Browser aus. Diese Daten werden <strong>ausschließlich lokal</strong>
   in <code>chrome.storage.local</code> gespeichert.</p>
   <p>Favicons (Seitensymbole) werden <strong>nicht</strong> als Adressen
-  gespeichert oder von externen Servern nachgeladen. In der Vorschau zeigt
-  die Extension das Seitensymbol ausschließlich aus dem lokalen
-  Browser-Cache an (in Chrome und Edge über die lokale Favicon-Schnittstelle
-  des Browsers); in Firefox wird ein neutrales Platzhaltersymbol angezeigt.
-  Beim Anzeigen Ihrer Sessions werden somit <strong>keine Verbindungen zu den
-  gespeicherten Websites</strong> aufgebaut.</p>
+  gespeichert oder von externen Servern nachgeladen. Liefert der Browser ein
+  Seitensymbol bereits als eingebettetes Bild (<code>data:</code>-Adresse), wird
+  dieses Bild mit dem Tab gespeichert. Andernfalls zeigt die Extension in
+  Chrome und Edge das Seitensymbol aus dem lokalen Browser-Cache über die
+  Favicon-Schnittstelle des Browsers an; dieselbe Schnittstelle liefert auch das
+  Symbol eines noch nicht geladenen Tabs (Abschnitt 4.9). In Firefox wird
+  stattdessen ein neutrales Platzhaltersymbol angezeigt. Beim Anzeigen Ihrer
+  Sessions werden somit <strong>keine Verbindungen zu den gespeicherten
+  Websites</strong> aufgebaut.</p>
   <ul>
-    <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung —
+    <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung:
     die Session-Speicherung ist die Kernleistung der Extension)</li>
     <li>Speicherdauer: Bis Sie die Session löschen oder die Extension deinstallieren</li>
     <li>Externe Übermittlung: Keine</li>
   </ul>
 
-  <h3>4.2 Lizenzschlüssel-Verifizierung (nur Premium)</h3>
-  <p>Wenn Sie einen Premium-Lizenzschlüssel eingeben, übermittelt die Extension
-  diesen Schlüssel sowie eine Produkt-ID an den Server der Gumroad Inc. zur
-  Validierung. Es werden keine weiteren Daten (insbesondere keine Tab-Inhalte
-  oder Browsing-Daten) übermittelt.</p>
+  <h3>4.2 Lizenzprüfung (nur Premium)</h3>
+  <p>Wenn Sie einen Premium-Lizenzschlüssel eingeben und auf "Überprüfen"
+  klicken, sendet die Extension eine Anfrage an Gumroad
+  (<code>api.gumroad.com</code>) zur Prüfung. Die Anfrage enthält den
+  Lizenzschlüssel, die Produkt-ID und eine Angabe, ob diese Prüfung den
+  Aktivierungszähler von Gumroad erhöht (nur bei der ersten Aktivierung des
+  Schlüssels auf diesem Gerät). Tab-Inhalte, gespeicherte Sessions oder andere
+  Browsing-Daten sind nicht Teil der Anfrage.</p>
+  <p>In Firefox sendet die Extension die Anfrage nur mit Ihrer Zustimmung. Firefox
+  fragt sie in einem eigenen Dialog ab, wenn Sie in den Einstellungen im
+  Abschnitt "Premium-Lizenz" auf "Überprüfen" klicken (Datenkategorie
+  "Authentifizierungs-Informationen"). Lehnen Sie ab, wird nichts gesendet und
+  nichts gespeichert. Sie können die Zustimmung jederzeit in der
+  Add-on-Verwaltung von Firefox (<code>about:addons</code>) zurücknehmen. In
+  Chrome und Edge gibt es keinen solchen Dialog: Dort ist Ihr Klick auf
+  "Überprüfen" die Zustimmung. In allen Browsern nennt ein Hinweis unter der
+  Schaltfläche, was gesendet wird.</p>
+  <p>Wie bei jeder HTTPS-Anfrage erhält Gumroad außerdem Ihre IP-Adresse und die
+  üblichen technischen Verbindungsdaten, zum Beispiel den Zeitpunkt der Anfrage
+  und übliche HTTP-Header.</p>
+  <p>Gumroad antwortet mit dem Prüfergebnis und Angaben zum Kauf. Davon speichert
+  die Extension lokal: den Lizenzschlüssel, ob und wann er zuletzt erfolgreich
+  geprüft wurde, und ob der Kauf erstattet oder zurückgebucht wurde. Bei einem
+  erstatteten oder zurückgebuchten Kauf bleibt Premium deaktiviert. Die
+  E-Mail-Adresse des Kaufs, die Gumroad in der Antwort ebenfalls meldet, liest die
+  Extension nicht aus und speichert sie nicht; eine von einer früheren Version
+  gespeicherte E-Mail-Adresse wird bei der Aktualisierung gelöscht.</p>
+  <p>Ein Schlüssel kann auf bis zu 3 Geräten aktiviert werden; dafür wertet die
+  Extension den Aktivierungszähler in der Antwort von Gumroad aus. Zusätzlich
+  vermerkt die Extension, welche Schlüssel auf diesem Gerät bereits aktiviert
+  wurden, damit eine erneute Eingabe keine weitere Aktivierung verbraucht. Dieser
+  Vermerk bleibt auch nach "Lizenzschlüssel entfernen" erhalten und wird mit der
+  Deinstallation der Extension gelöscht. Lizenzdaten sind nie Teil eines
+  Backups.</p>
   <ul>
-    <li>Empfänger: Gumroad Inc., 85 Broad St, New York, NY 10004, USA</li>
-    <li>Übermittelte Daten: Lizenzschlüssel (verschlüsselt per HTTPS), Produkt-ID</li>
-    <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung —
-    Lizenzprüfung ist Voraussetzung für Premium-Funktionen)</li>
-    <li>Wiederholung: Erstprüfung bei Eingabe, danach alle 7 Tage beim Start
-    (30-Tage-Offline-Kulanz)</li>
-    <li>Drittlandübermittlung: USA — Gumroad ist für EU-Nutzer unter dem
-    EU-US Data Privacy Framework zertifiziert. Siehe:
+    <li>Empfänger: Gumroad, Inc., USA</li>
+    <li>Übermittelte Daten: Lizenzschlüssel, Produkt-ID, Angabe zum
+    Aktivierungszähler (verschlüsselt per HTTPS); technisch bedingt die
+    IP-Adresse und die üblichen Verbindungsdaten einer HTTPS-Anfrage</li>
+    <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des
+    Lizenzvertrags: Aktivierung, laufende Prüfung, Prüfung auf Erstattung und
+    Rückbuchung, Begrenzung auf 3 Geräte)</li>
+    <li>Wiederholung: Erstprüfung beim Klick auf "Überprüfen"; danach erneut,
+    wenn die Extension den Premium-Status abfragt (etwa beim Öffnen ihrer
+    Oberflächen oder beim Intervall-Auto-Save) und die letzte erfolgreiche Prüfung
+    älter als 7 Tage ist. Ist Gumroad nicht erreichbar, bleibt Premium bis zu
+    30 Tage nach der letzten erfolgreichen Prüfung aktiv. Ohne Zustimmung in
+    Firefox findet keine erneute Prüfung statt: Der zuletzt geprüfte Stand bleibt
+    bestehen, eine Erstattung wird erst bei der nächsten Prüfung erkannt, die
+    Gumroad erreicht, und Premium endet 30 Tage nach der letzten erfolgreichen
+    Prüfung.</li>
+    <li>Drittlandübermittlung: USA. Nach der Datenschutzerklärung von Gumroad
+    (Stand "Last revised: July 15, 2026") speichert Gumroad Daten auf Servern in
+    den USA und stützt Übermittlungen aus dem EWR in die USA auf
+    Standardvertragsklauseln der Europäischen Kommission. Siehe:
     <a href="https://gumroad.com/privacy" target="_blank" rel="noopener noreferrer">gumroad.com/privacy</a></li>
   </ul>
 
   <h3>4.3 Automatisches Backup (Premium, optional)</h3>
-  <p>Die optionale automatische Backup-Funktion legt ein JSON-Abbild Ihrer
-  Sessions im lokalen Browser-Speicher der Extension
-  (<code>chrome.storage.local</code>) ab. Es werden maximal fünf Abbilder
-  vorgehalten (ältere werden automatisch überschrieben). Diese Daten
-  verlassen Ihr Gerät nicht und werden nicht in den Download-Ordner
-  geschrieben. Die Funktion ist standardmäßig deaktiviert.</p>
-  <p>Das manuelle Backup ("Backup jetzt") erstellt auf Ihre Aktion hin eine
-  JSON-Datei, die Ihr Browser über den normalen Download-Vorgang speichert.
-  Auch hierbei werden keine Daten an externe Server übermittelt.</p>
+  <p>Das optionale tägliche Backup legt zur eingestellten Uhrzeit ein
+  JSON-Abbild Ihrer Sessions, der Leseliste, der Arbeitsbereiche und der
+  Einstellungen im lokalen Browser-Speicher der Extension
+  (<code>chrome.storage.local</code>) ab. Lizenzdaten sind nicht enthalten. Es
+  werden höchstens fünf Abbilder vorgehalten; die Anzahl ist einstellbar, ältere
+  werden automatisch gelöscht. Diese Daten verlassen Ihr Gerät nicht und werden
+  nicht automatisch in den Download-Ordner geschrieben. Die Funktion ist
+  standardmäßig deaktiviert.</p>
+  <p>Mit der Schaltfläche "Herunterladen" können Sie jedes gespeicherte Backup als
+  Datei speichern. Das manuelle Backup ("Backup erstellen") erstellt auf Ihre
+  Aktion hin eine JSON-Datei mit denselben Inhalten. In Chrome und Edge öffnet
+  sich dafür der Speichern-Dialog des Browsers; steht er nicht zur Verfügung
+  (etwa in Firefox), speichert der Browser die Datei über den normalen
+  Download-Vorgang. Einzelne Sessions können Sie außerdem als JSON- oder
+  HTML-Datei exportieren; diese Dateien speichert der Browser über den normalen
+  Download-Vorgang. Alle Dateien werden dort abgelegt, wo Sie es im Dialog oder
+  in Ihren Browser-Einstellungen festlegen. Auch hierbei werden keine Daten an
+  externe Server übermittelt.</p>
   <ul>
     <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO</li>
     <li>Externe Übermittlung: Keine</li>
   </ul>
 
-  <h3>4.4 Tab-Hibernation (nur Chrome, Premium)</h3>
+  <h3>4.4 Tab-Hibernation (nur Chrome und Edge, Premium)</h3>
   <p>Die Tab-Hibernation-Funktion nutzt <code>chrome.tabs.discard()</code>,
   um Tabs aus dem Speicher zu entladen, ohne sie zu schließen. Dabei werden
   keine Daten übertragen. Der Tab-Inhalt bleibt im Browser erhalten und
   wird bei Wiederaufruf neu geladen.</p>
 
+  <h3>4.5 Automatische Speicherung</h3>
+  <p><strong>Wiederherstellungs-Snapshot:</strong> Solange die Option "Tabs beim
+  Schließen eines Fensters speichern" eingeschaltet ist, speichert die Extension
+  die Tabs aller offenen normalen, nicht privaten Fenster in regelmäßigen
+  Abständen lokal als Wiederherstellungs-Snapshot. Gespeichert werden je Tab
+  Adresse, Titel, Tab-Gruppe und eingebettetes Seitensymbol sowie die Angabe, ob
+  der Tab angeheftet oder aktiv ist, dazu der Zeitpunkt der Speicherung. Jede
+  Speicherung ersetzt die vorige.</p>
+  <p>Der Snapshot dient nur einem Zweck: Die Fenster, die beim Beenden des
+  Browsers oder bei einem Absturz noch geöffnet waren, können so beim nächsten
+  Start als Session "Browser geschlossen" gespeichert werden (siehe unten).
+  Dafür bleibt er bis zum nächsten Start erhalten, ohne zeitliche Begrenzung. Beim
+  Start wertet die Extension ihn aus und löscht ihn danach immer, auch wenn daraus
+  keine Session entsteht.</p>
+  <p>Die Extension löscht den Snapshot außerdem, wenn Sie die Option ausschalten.
+  Mit der Deinstallation der Extension wird er ebenfalls gelöscht.</p>
+  <p>Der Snapshot lässt sich nicht direkt wiederherstellen. Er ist nie Teil eines
+  Backups oder Exports und wird nicht an externe Server übermittelt. Die daraus
+  entstandene Session ist dagegen eine normale Session: Sie können sie
+  wiederherstellen und exportieren, und sie ist Teil Ihrer Backups.</p>
+  <p><strong>Speichern beim Schließen eines Fensters (Free, optional,
+  standardmäßig aus):</strong> Ist die Funktion eingeschaltet, speichert die
+  Extension geschlossene normale Fenster lokal als Session. Die Fenster, die beim
+  Beenden des Browsers oder bei einem Absturz noch geöffnet waren, speichert sie
+  beim nächsten Browserstart aus dem Wiederherstellungs-Snapshot als eine Session
+  "Browser geschlossen".</p>
+  <p><strong>Intervall-Auto-Save (optional, standardmäßig aus):</strong> Die
+  Extension speichert im eingestellten Abstand die Tabs der offenen Fenster als
+  Session, in der kostenlosen Version nur das zuletzt aktive Fenster.</p>
+  <p>Für beide Arten automatischer Sessions legen Sie in den Einstellungen fest,
+  wie viele Einträge aufbewahrt werden. Ist die Grenze erreicht, löscht die
+  Extension automatisch den ältesten nicht gesperrten Eintrag derselben Art.
+  Gesperrte Sessions werden nie automatisch gelöscht.</p>
+  <ul>
+    <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO</li>
+    <li>Speicherdauer: Bis zur automatischen Löschung, bis Sie die Session
+    löschen oder die Extension deinstallieren</li>
+    <li>Speicherdauer Wiederherstellungs-Snapshot: Bis zur nächsten Speicherung,
+    längstens bis zum nächsten Browserstart, bis Sie die Option ausschalten oder
+    bis zur Deinstallation der Extension</li>
+    <li>Externe Übermittlung: Keine</li>
+  </ul>
+
+  <h3>4.6 Fenster-Zwischenspeicher</h3>
+  <p>Damit ein geschlossenes Fenster auch dann gespeichert werden kann, wenn der
+  Browser den Hintergrundprozess der Extension zwischenzeitlich beendet hat,
+  hält die Extension die Titel und Adressen der Tabs der offenen normalen
+  Fenster (mit Tab-Gruppen und eingebetteten Seitensymbolen) im Sitzungsspeicher
+  des Browsers
+  (<code>chrome.storage.session</code>) vor. Das geschieht unabhängig davon, ob
+  das Speichern beim Schließen eingeschaltet ist. Private Fenster und
+  Popup-Fenster erscheinen dort nur als leere Einträge mit Fenstertyp und
+  Privat-Kennzeichen, ohne Adressen oder Titel. Der Eintrag eines Fensters wird
+  entfernt, sobald es geschlossen wird. Der Sitzungsspeicher wird geleert, wenn
+  der Browser beendet oder die Extension aktualisiert oder neu geladen wird. Der
+  Zwischenspeicher ist nie Teil eines Backups oder Exports.</p>
+  <p>Im Sitzungsspeicher legt die Extension außerdem den zuletzt geöffneten
+  Reiter der Seitenleiste ab. Dieser Eintrag enthält keine Browsing-Daten.</p>
+  <ul>
+    <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO</li>
+    <li>Speicherdauer: Bis zum Beenden des Browsers</li>
+    <li>Externe Übermittlung: Keine</li>
+  </ul>
+
+  <h3>4.7 Private Fenster (Inkognito)</h3>
+  <p>Die automatischen Funktionen (Wiederherstellungs-Snapshot,
+  Intervall-Auto-Save, Speichern beim Schließen eines Fensters) speichern nie
+  private Fenster. Wenn Sie die Extension im privaten Modus zugelassen haben,
+  schließen manuelle Speichervorgänge (Speichern des aktuellen Fensters oder
+  aller Fenster, auch per Tastaturkürzel) private Fenster dagegen ein, und der
+  Focus Mode erfasst sie beim Aktivieren. Solche Sessions werden wie alle
+  anderen lokal gespeichert, bis Sie sie löschen.</p>
+
+  <h3>4.8 Leseliste: Zurückstellen (Premium)</h3>
+  <p>Sie können einen Eintrag der Leseliste bis zu einem gewählten Zeitpunkt
+  zurückstellen. Dazu speichert die Extension im bestehenden Eintrag den
+  Zeitpunkt (<code>snoozedUntil</code>). Eine regelmäßige Prüfung im Hintergrund
+  markiert fällige Einträge mit dem Zeitpunkt, zu dem sie wieder erscheinen
+  (<code>resurfacedAt</code>); beim Öffnen des Eintrags oder mit "Hinweis
+  entfernen" wird diese Markierung gelöscht. Eine Zahl am Symbol der Extension in
+  der Symbolleiste zeigt die Anzahl fälliger Einträge. Es werden keine
+  Benachrichtigungen angezeigt und keine Netzwerkanfragen gestellt.</p>
+
+  <h3>4.9 Wiederherstellen ohne Laden</h3>
+  <p>Die Einstellung "Sessions wiederherstellen" legt fest, ob beim
+  Wiederherstellen alle Tabs sofort laden oder erst beim Anklicken (Standard).
+  Der aktive Tab jedes Fensters und angeheftete Tabs laden immer sofort. Beim
+  Laden beim Anklicken öffnet in Chrome und Edge jeder übrige Tab zunächst eine
+  lokale Seite der Extension, die die Zieladresse und den Seitentitel in ihrer
+  eigenen Adresse trägt. Diese Seite stellt selbst keine Netzwerkanfrage und
+  öffnet die eigentliche Webseite erst, wenn Sie den Tab anzeigen. Bleibt der Tab
+  im Hintergrund, entlädt die Seite ihren Tab selbst. In privaten Fenstern laden
+  die Tabs in Chrome und Edge sofort. In Firefox sind die Tabs gewöhnliche Tabs,
+  die ungeladen gestartet werden. In allen Fällen ist die Zieladresse danach im
+  geöffneten Tab des Browsers vorhanden, wie bei jedem anderen geöffneten Tab.
+  Gespeichert wird immer die eigentliche Adresse, nie die Adresse der lokalen
+  Seite.</p>
+
+  <h3>4.10 Import</h3>
+  <p>Sie können eigene Session-Depot-Backups sowie Sessions aus Dateien von Tab
+  Session Manager, Session Buddy und OneTab importieren; der Import aus anderen
+  Erweiterungen ist eine Premium-Funktion. Die gewählte Datei wird lokal im
+  Browser gelesen und ausgewertet; es wird nichts hochgeladen. Übernommen werden
+  nur Tabs mit http- oder https-Adressen. Vor dem Import zeigt eine Vorschau, was
+  übernommen wird, und Sie wählen, ob ergänzt oder überschrieben wird.</p>
+  <ul>
+    <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO</li>
+    <li>Externe Übermittlung: Keine</li>
+  </ul>
+
   <h2>5. Zugriffsberechtigungen der Extension</h2>
   <p>Session Depot fordert folgende Browser-Berechtigungen an:</p>
   <ul>
-    <li><strong>tabs:</strong> Lesen von URL und Titel aktuell geöffneter
-    Tabs für die Session-Speicherung. Nur aktiv, wenn Sie eine Aktion auslösen.</li>
-    <li><strong>storage:</strong> Lokale Speicherung aller Extension-Daten.</li>
-    <li><strong>alarms:</strong> Zeitgesteuerte Auto-Save- und
-    Crash-Recovery-Funktionen.</li>
-    <li><strong>sidePanel / sidebar_action:</strong> Anzeige des seitlichen Panels.</li>
-    <li><strong>commands:</strong> Tastaturkürzel.</li>
+    <li><strong>tabs:</strong> Lesen von URL und Titel geöffneter Tabs für die
+    Session-Speicherung, das Öffnen, Entladen und Schließen von Tabs beim
+    Wiederherstellen und im Focus Mode. Neben Ihren Aktionen nutzen auch die
+    automatischen Funktionen diese Berechtigung: der Wiederherstellungs-Snapshot,
+    der Intervall-Auto-Save und der Fenster-Zwischenspeicher, der bei Änderungen
+    an Tabs oder Fenstern aktualisiert wird (Abschnitte 4.5 und 4.6).</li>
+    <li><strong>storage:</strong> Lokale Speicherung aller Extension-Daten
+    (<code>storage.local</code>) und des Fenster-Zwischenspeichers
+    (<code>storage.session</code>).</li>
+    <li><strong>alarms:</strong> Zeitgesteuerter Wiederherstellungs-Snapshot (nur
+    solange das Speichern beim Schließen eines Fensters eingeschaltet ist),
+    Intervall-Auto-Save, tägliches Backup und die Prüfung der Leseliste auf
+    fällige Einträge.</li>
     <li><strong>tabGroups:</strong> Lesen und Schreiben von Tab-Gruppen, um
     Gruppen beim Speichern und Wiederherstellen zu erhalten.</li>
+    <li><strong>sidePanel (nur Chrome/Edge):</strong> Anzeige der Seitenleiste. In
+    Firefox wird die Seitenleiste über den Manifest-Eintrag
+    <code>sidebar_action</code> bereitgestellt, ohne eigene Berechtigung.</li>
     <li><strong>favicon (nur Chrome/Edge):</strong> Anzeige des lokal
-    zwischengespeicherten Seitensymbols in der Vorschau. Liest ausschließlich
-    den lokalen Browser-Cache; es werden keine Netzwerk-Anfragen an die
-    gespeicherten Websites gestellt.</li>
+    zwischengespeicherten Seitensymbols in der Vorschau und auf der lokalen Seite
+    nicht geladener Tabs (Abschnitt 4.9). Liest ausschließlich den lokalen
+    Browser-Cache; es werden keine Netzwerk-Anfragen an die gespeicherten
+    Websites gestellt.</li>
+    <li><strong>Host-Berechtigung https://api.gumroad.com/*:</strong> Ausschließlich
+    für die Lizenzprüfung (Abschnitt 4.2). Die Extension hat keinen Zugriff auf
+    die Inhalte anderer Websites.</li>
+    <li><strong>commands:</strong> Tastaturkürzel (Manifest-Eintrag, keine eigene
+    Berechtigung).</li>
   </ul>
 
   <h2>6. Datenweitergabe an Dritte</h2>
   <p>Eine Weitergabe personenbezogener Daten an Dritte erfolgt
-  <strong>ausschließlich</strong> im Rahmen der Lizenzschlüssel-Verifizierung
-  über die Gumroad-API (siehe Abschnitt 4.2). Eine darüber hinausgehende
+  <strong>ausschließlich</strong> im Rahmen der Lizenzprüfung über die
+  Gumroad-API (siehe Abschnitt 4.2). Eine darüber hinausgehende
   Datenweitergabe findet nicht statt.</p>
 
   <h2>7. Ihre Rechte als betroffene Person</h2>
@@ -407,10 +646,10 @@
     </div>
   </div>
   <p>Da Session-Daten ausschließlich lokal auf Ihrem Gerät gespeichert werden,
-  können Sie diese jederzeit selbst einsehen, ändern oder löschen —
-  direkt in der Extension (Session-Verwaltung → Löschen) oder durch
-  Deinstallation der Extension.</p>
-  <p>Für Anfragen zur Lizenzschlüssel-Verarbeitung wenden Sie sich an:
+  können Sie diese jederzeit selbst einsehen, ändern oder löschen: direkt in der
+  Extension (im "Session Manager" mit "Löschen") oder durch Deinstallation der
+  Extension.</p>
+  <p>Für Anfragen zur Verarbeitung im Rahmen der Lizenzprüfung wenden Sie sich an:
   <a href="mailto:rheysoft@gmail.com">rheysoft@gmail.com</a></p>
 
   <h2>8. Beschwerderecht</h2>
@@ -429,9 +668,7 @@
   letzten Änderung ist oben angegeben. Wir empfehlen, diese Seite regelmäßig
   aufzurufen.</p>
 
-  <!-- ════════════════════════════════════════════
-       ENGLISH
-       ════════════════════════════════════════════ -->
+  <!-- English -->
   <div class="lang-section" id="en">
     <div class="lang-badge">English</div>
 
@@ -441,9 +678,9 @@
     and what rights you have as a data subject.</p>
 
     <div class="meta-box">
-      <strong>Last updated:</strong> 17.09.2026 &nbsp;|&nbsp;
-      <strong>Version:</strong> Session Depot 1.0.2 &nbsp;|&nbsp;
-      <strong>Scope:</strong> Browser extension (Firefox, Chrome, Edge)
+      <strong>Last updated:</strong> [PUBLICATION-DATE] &nbsp;|&nbsp;
+      <strong>Scope:</strong> Session Depot, version 1.1.0 and later, until this
+      policy is changed
     </div>
 
     <h2>1. Data Controller</h2>
@@ -452,20 +689,24 @@
     <p>
       rheysoft UG (haftungsbeschränkt)<br />
       Weinbergstr. 38<br />
-	  01445 Radebeul, Germany<br />
+      01445 Radebeul, Germany<br />
       Email: <a href="mailto:rheysoft@gmail.com">rheysoft@gmail.com</a>
     </p>
-    <p>Small business per §19 German VAT Act
-    (Kleinunternehmer); no VAT charged.</p>
 
     <h2>2. Core Principle: Local-Only Storage</h2>
     <p>Session Depot is built on the principle of <strong>Privacy by Design</strong>.
     The extension requires no account or registration and <strong>never transmits
-    your browsing data</strong> (saved sessions, tab URLs, reading queue) to any
+    your browsing data</strong> (saved sessions, tab URLs, reading list) to any
     external server.</p>
-    <p>All user data is stored exclusively on your device using the browser's
-    local storage API (<code>chrome.storage.local</code>) and remains entirely
-    under your control.</p>
+    <p>All user data is stored exclusively on your device: in the extension's
+    local browser storage (<code>chrome.storage.local</code>), for the window
+    cache in the browser's session storage (<code>chrome.storage.session</code>,
+    see section 4.6) and, when you save a backup or an export, in a file at the
+    location you choose. The data remains entirely under your control.</p>
+    <p>The extension contains no analytics or tracking and loads no code, scripts
+    or fonts from the network. The extension's code sets and reads no cookies. The
+    only network request the extension makes is the license check
+    (section 4.2).</p>
 
     <h2>3. Data Processed</h2>
 
@@ -481,38 +722,90 @@
       <tbody>
         <tr>
           <td>Session data</td>
-          <td>Tab URLs, page titles, tab groups, notes</td>
+          <td>Name, description, tags, tab URLs, page titles, tab groups, notes,
+          embedded site icons; also automatically created sessions
+          (section 4.5)</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
         <tr>
-          <td>Workspaces (Premium)</td>
-          <td>Workspace names, colors, session assignments</td>
+          <td>Workspaces</td>
+          <td>Workspace names, colors, session assignments (up to 2 free, more with
+          Premium)</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
         <tr>
-          <td>Reading Queue</td>
-          <td>URL, page title of saved links</td>
+          <td>Reading list</td>
+          <td>URL, page title, embedded site icon, note, read state, snooze
+          times (section 4.8)</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
         <tr>
           <td>Settings</td>
-          <td>Theme, language, auto-save configuration</td>
+          <td>Theme (including custom colors), language, auto-save and backup
+          configuration, restore mode, Focus Mode options</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
         <tr>
-          <td>License key (Premium)</td>
-          <td>License key received from Gumroad</td>
+          <td>License data (Premium)</td>
+          <td>License key, verification status and time, refund marker, activation
+          records of this device; no email address (section 4.2)</td>
           <td>Local device only</td>
-          <td><span class="tag remote">Sent to Gumroad</span></td>
+          <td><span class="tag remote">Key sent to Gumroad</span></td>
         </tr>
         <tr>
           <td>Automatic backup (Premium, optional)</td>
-          <td>JSON snapshot of all sessions (max. 5, rotating)</td>
+          <td>Daily JSON snapshot of sessions, reading list, workspaces and
+          settings, without license data (at most 5, rotating)</td>
           <td>Local device only</td>
+          <td><span class="tag local">Local only</span></td>
+        </tr>
+        <tr>
+          <td>Recovery snapshot</td>
+          <td>Address, title, tab group, embedded site icon and whether pinned or
+          active, per tab of the open normal, non-private windows; time of the save.
+          Only while "Save tabs when a window is closed" is switched on. Retention:
+          until the next save, at most until the next browser start or until the
+          option is switched off (section 4.5)</td>
+          <td>Local device only</td>
+          <td><span class="tag local">Local only</span></td>
+        </tr>
+        <tr>
+          <td>Recovery metadata</td>
+          <td>Time of the most recently processed snapshot (timestamp), so that the
+          same snapshot is not saved as a session twice; no browsing data. Retention:
+          until the next processed snapshot or until you uninstall the extension</td>
+          <td>Local device only</td>
+          <td><span class="tag local">Local only</span></td>
+        </tr>
+        <tr>
+          <td>Focus Mode state</td>
+          <td>Tabs of the windows before activation (for the return), window IDs,
+          selected workspace. Retention: from activation until Focus Mode is
+          ended, also across a browser restart</td>
+          <td>Local device only</td>
+          <td><span class="tag local">Local only</span></td>
+        </tr>
+        <tr>
+          <td>Window cache</td>
+          <td>Tab titles, tab addresses, tab groups and embedded site icons of the
+          open normal windows; window type and private flag (section 4.6)</td>
+          <td>Browser session storage, cleared on exit</td>
+          <td><span class="tag local">Local only</span></td>
+        </tr>
+        <tr>
+          <td>UI state</td>
+          <td>Last opened side panel tab</td>
+          <td>Browser session storage, cleared on exit</td>
+          <td><span class="tag local">Local only</span></td>
+        </tr>
+        <tr>
+          <td>Backup and export files</td>
+          <td>Backups and exported sessions you save (section 4.3)</td>
+          <td>File at the location you choose</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
       </tbody>
@@ -525,73 +818,236 @@
     and tab group information from your browser. This data is stored
     <strong>exclusively locally</strong> in <code>chrome.storage.local</code>.</p>
     <p>Favicons (site icons) are <strong>not</strong> stored as addresses or
-    fetched from external servers. In previews, the extension displays the site
-    icon solely from the local browser cache (in Chrome and Edge via the
-    browser's local favicon interface); in Firefox a neutral placeholder icon is
-    shown. As a result, viewing your sessions establishes
-    <strong>no connections to the saved websites</strong>.</p>
+    fetched from external servers. If the browser already supplies a site icon as
+    an embedded image (<code>data:</code> address), that image is stored with the
+    tab. Otherwise, in Chrome and Edge the extension displays the site icon from
+    the local browser cache via the browser's favicon interface; the same
+    interface also supplies the icon of a tab that has not loaded yet
+    (section 4.9). In Firefox a neutral placeholder icon is shown instead. As a
+    result, viewing your sessions establishes <strong>no connections to the saved
+    websites</strong>.</p>
     <ul>
-      <li>Legal basis: Art. 6(1)(b) GDPR (performance of contract —
+      <li>Legal basis: Art. 6(1)(b) GDPR (performance of contract:
       session saving is the core service of the extension)</li>
       <li>Retention: Until you delete the session or uninstall the extension</li>
       <li>External transmission: None</li>
     </ul>
 
-    <h3>4.2 License key verification (Premium only)</h3>
-    <p>When you enter a Premium license key, the extension sends that key and a
-    product ID to Gumroad Inc.'s server for validation. No other data (in
-    particular no tab content or browsing data) is transmitted.</p>
+    <h3>4.2 License check (Premium only)</h3>
+    <p>When you enter a Premium license key and click "Verify", the extension
+    sends a request to Gumroad (<code>api.gumroad.com</code>) to check it. The
+    request contains the license key, the product ID and a flag stating whether
+    this check increases Gumroad's activation counter (only on the first
+    activation of the key on this device). Tab content, saved sessions or other
+    browsing data are not part of the request.</p>
+    <p>In Firefox the extension sends the request only with your consent. Firefox
+    asks for it in its own dialog when you click "Verify" in the "Premium License"
+    section of the settings (data category <code>authenticationInfo</code>). If you
+    decline, nothing is sent and nothing is stored. You can take back this consent
+    at any time in the Firefox add-on manager (<code>about:addons</code>). Chrome
+    and Edge have no such dialog: there your click on "Verify" is your consent. In
+    every browser a notice below the button says what is sent.</p>
+    <p>As with every HTTPS request, Gumroad also receives your IP address and the
+    usual technical connection data, for example the time of the request and
+    standard HTTP headers.</p>
+    <p>Gumroad replies with the verification result and details of the purchase.
+    Of these, the extension stores locally: the license key, whether and when it
+    was last verified successfully, and whether the purchase was refunded or
+    charged back. For a refunded or charged-back purchase, Premium stays disabled.
+    The purchase email address, which Gumroad also returns, is not read and not
+    stored by the extension; an email address stored by an earlier version is
+    deleted on update.</p>
+    <p>A key can be activated on up to 3 devices; for this the extension reads the
+    activation count in Gumroad's answer. In addition, the extension records which
+    keys have already been activated on this device, so that entering a key again
+    does not use up another activation. This record is kept after "Remove license
+    key" and is deleted when you uninstall the extension. License data is never
+    part of a backup.</p>
     <ul>
-      <li>Recipient: Gumroad Inc., 85 Broad St, New York, NY 10004, USA</li>
-      <li>Data transmitted: License key (encrypted via HTTPS), product ID</li>
-      <li>Legal basis: Art. 6(1)(b) GDPR (performance of contract —
-      license verification is required to deliver Premium features)</li>
-      <li>Frequency: On initial key entry, then every 7 days on startup
-      (30-day offline grace period)</li>
-      <li>International transfer: USA — Gumroad is certified under the
-      EU-US Data Privacy Framework. See:
+      <li>Recipient: Gumroad, Inc., USA</li>
+      <li>Data transmitted: License key, product ID, activation counter flag
+      (encrypted via HTTPS); for technical reasons the IP address and the usual
+      connection data of an HTTPS request</li>
+      <li>Legal basis: Art. 6(1)(b) GDPR (performance of the license contract:
+      activation, ongoing verification, check for refunds and chargebacks, limit of
+      3 devices)</li>
+      <li>Frequency: Initial check when you click "Verify"; after that again whenever the
+      extension checks the Premium status (for example when one of its views
+      opens or during the interval auto-save) and the last successful check is
+      older than 7 days. If Gumroad cannot be reached, Premium stays active for
+      up to 30 days after the last successful check. Without consent in Firefox no
+      re-check takes place: the last verified state stands, a refund is only
+      detected at the next check that reaches Gumroad, and Premium ends 30 days
+      after the last successful check.</li>
+      <li>International transfer: USA. According to Gumroad's privacy policy
+      ("Last revised: July 15, 2026"), Gumroad stores data on servers in the
+      United States and bases transfers from the EEA to the United States on
+      standard contractual clauses adopted by the European Commission. See:
       <a href="https://gumroad.com/privacy" target="_blank" rel="noopener noreferrer">gumroad.com/privacy</a></li>
     </ul>
 
     <h3>4.3 Automatic backup (Premium, optional)</h3>
-    <p>The optional automatic backup feature stores a JSON snapshot of your
-    sessions in the extension's local browser storage
-    (<code>chrome.storage.local</code>). A maximum of five snapshots is kept
-    (older ones are overwritten automatically). This data does not leave your
-    device and is not written to the Downloads folder. The feature is disabled
-    by default.</p>
-    <p>The manual backup ("Backup now") creates, on your action, a JSON file that
-    your browser saves via the normal download process. No data is transmitted to
-    external servers in this case either.</p>
+    <p>The optional daily backup stores, at the configured time, a JSON snapshot
+    of your sessions, reading list, workspaces and settings in the extension's
+    local browser storage (<code>chrome.storage.local</code>). License data is
+    not included. At most five snapshots are kept; the number is configurable,
+    and older ones are deleted automatically. This data does not leave your
+    device and is not written to the Downloads folder automatically. The feature
+    is disabled by default.</p>
+    <p>With the "Download" button you can save each stored backup as a file. The
+    manual backup ("Create backup") creates, on your action, a JSON file with
+    the same contents. In Chrome and Edge the browser's save dialog opens for
+    this; where it is not available (for example in Firefox), the browser saves
+    the file via the normal download process. You can also export single
+    sessions as a JSON or HTML file; the browser saves these files via the
+    normal download process. All files are stored where you specify in the
+    dialog or in your browser settings. No data is transmitted to external
+    servers in this case either.</p>
     <ul>
       <li>Legal basis: Art. 6(1)(b) GDPR</li>
       <li>External transmission: None</li>
     </ul>
 
-    <h3>4.4 Tab hibernation (Chrome only, Premium)</h3>
+    <h3>4.4 Tab hibernation (Chrome and Edge only, Premium)</h3>
     <p>Tab hibernation uses <code>chrome.tabs.discard()</code> to unload tabs
     from memory without closing them. No data is transmitted. Tab content
     remains in the browser and reloads when revisited.</p>
 
+    <h3>4.5 Automatic saving</h3>
+    <p><strong>Recovery snapshot:</strong> While the option "Save tabs when a
+    window is closed" is switched on, the extension stores the tabs of all open
+    normal, non-private windows locally at regular intervals as a recovery
+    snapshot. For each tab it stores the address, title, tab group and embedded
+    site icon as well as whether the tab is pinned or active, together with the
+    time of the save. Each save replaces the previous one.</p>
+    <p>The snapshot serves one purpose only: the windows still open when the
+    browser exits or crashes can be saved at the next start as the session
+    "Browser closed" (see below). For this it is kept until the next start, with
+    no time limit. At the start the extension evaluates it and then always
+    deletes it, even if no session results from it.</p>
+    <p>The extension also deletes the snapshot when you switch the option off.
+    It is likewise deleted when you uninstall the extension.</p>
+    <p>The snapshot cannot be restored directly. It is never part of a backup or
+    export and is not transmitted to external servers. The session created from
+    it, however, is a normal session: you can restore and export it, and it is
+    part of your backups.</p>
+    <p><strong>Save on window close (Free, optional, off by default):</strong>
+    When this feature is on, the extension saves closed normal windows locally as
+    a session. The windows still open when the browser exits or crashes are saved
+    at the next browser start from the recovery snapshot as one "Browser closed"
+    session.</p>
+    <p><strong>Interval auto-save (optional, off by default):</strong> At the
+    configured interval the extension saves the tabs of the open windows as a
+    session, in the free version only the last active window.</p>
+    <p>For both kinds of automatic sessions you set in the settings how many
+    entries are kept. When the limit is reached, the extension automatically
+    deletes the oldest unlocked entry of the same kind. Locked sessions are never
+    deleted automatically.</p>
+    <ul>
+      <li>Legal basis: Art. 6(1)(b) GDPR</li>
+      <li>Retention: Until automatic deletion, until you delete the session or
+      until you uninstall the extension</li>
+      <li>Retention of the recovery snapshot: Until the next save, at most until
+      the next browser start, until you switch the option off or until you
+      uninstall the extension</li>
+      <li>External transmission: None</li>
+    </ul>
+
+    <h3>4.6 Window cache</h3>
+    <p>So that a closed window can still be saved after the browser has stopped
+    the extension's background process in the meantime, the extension keeps the
+    titles and addresses of the tabs of the open normal windows (with tab
+    groups and embedded site icons) in the browser's session storage
+    (<code>chrome.storage.session</code>).
+    This happens regardless of whether save on window close is switched on.
+    Private windows and popup windows appear there only as empty entries with
+    window type and private flag, without addresses or titles. A window's entry
+    is removed as soon as the window closes. The session storage is cleared when
+    the browser exits or when the extension is updated or reloaded. The cache is
+    never part of a backup or export.</p>
+    <p>The extension also keeps the last opened side panel tab in the session
+    storage. This entry contains no browsing data.</p>
+    <ul>
+      <li>Legal basis: Art. 6(1)(b) GDPR</li>
+      <li>Retention: Until the browser exits</li>
+      <li>External transmission: None</li>
+    </ul>
+
+    <h3>4.7 Private windows (incognito)</h3>
+    <p>The automatic functions (recovery snapshot, interval auto-save, save on
+    window close) never store private windows. If you have allowed the extension
+    in private mode, manual saves (saving the current window or all windows,
+    including via keyboard shortcut) do include private windows, and Focus Mode
+    captures them when it is activated. Such sessions are stored locally like any
+    other until you delete them.</p>
+
+    <h3>4.8 Reading list: snooze (Premium)</h3>
+    <p>You can put a reading list item aside until a chosen time. For this, the
+    extension stores the time in the existing item (<code>snoozedUntil</code>). A
+    regular background check marks due items with the time they came back
+    (<code>resurfacedAt</code>); opening the item or "Dismiss" clears this
+    marker. A number on the extension's toolbar icon shows the number of due
+    items. No notifications are shown and no network requests are made.</p>
+
+    <h3>4.9 Restoring without loading</h3>
+    <p>The setting "Restoring sessions" determines whether all tabs load at once
+    when a session is restored or only when clicked (default). The active tab of
+    each window and pinned tabs always load at once. With loading on click, in
+    Chrome and Edge every other tab first opens a local page of the extension
+    that carries the target address and the page title in its own address. This
+    page makes no network request itself and opens the real web page only when
+    you show the tab. If the tab stays in the background, the page unloads its
+    own tab. In private windows the tabs load at once in Chrome and Edge. In
+    Firefox the tabs are ordinary tabs started unloaded. In every case the
+    target address then exists in the open browser tab, as with any other open
+    tab. The real address is always what is saved, never the address of the
+    local page.</p>
+
+    <h3>4.10 Import</h3>
+    <p>You can import your own Session Depot backups as well as sessions from Tab
+    Session Manager, Session Buddy and OneTab files; importing from other
+    extensions is a Premium feature. The chosen file is read and evaluated locally
+    in the browser; nothing is uploaded. Only tabs with http or https addresses
+    are taken over. Before the import a preview shows what will be taken over,
+    and you choose whether to merge or overwrite.</p>
+    <ul>
+      <li>Legal basis: Art. 6(1)(b) GDPR</li>
+      <li>External transmission: None</li>
+    </ul>
+
     <h2>5. Extension Permissions</h2>
     <p>Session Depot requests the following browser permissions:</p>
     <ul>
-      <li><strong>tabs:</strong> Read URL and title of open tabs for
-      session saving. Only active when you trigger an action.</li>
-      <li><strong>storage:</strong> Local storage of all extension data.</li>
-      <li><strong>alarms:</strong> Scheduled auto-save and crash recovery.</li>
-      <li><strong>sidePanel / sidebar_action:</strong> Display of the side panel.</li>
-      <li><strong>commands:</strong> Keyboard shortcuts.</li>
+      <li><strong>tabs:</strong> Read URL and title of open tabs for session
+      saving, and open, unload and close tabs when restoring and in Focus Mode.
+      Besides your actions, the automatic functions also use this permission: the
+      recovery snapshot, the interval auto-save and the window cache, which is
+      updated when tabs or windows change (sections 4.5 and 4.6).</li>
+      <li><strong>storage:</strong> Local storage of all extension data
+      (<code>storage.local</code>) and of the window cache
+      (<code>storage.session</code>).</li>
+      <li><strong>alarms:</strong> Scheduled recovery snapshot (only while save on
+      window close is switched on), interval auto-save, daily backup and the check
+      of the reading list for due items.</li>
       <li><strong>tabGroups:</strong> Reading and writing tab groups to preserve
       groups when saving and restoring sessions.</li>
+      <li><strong>sidePanel (Chrome/Edge only):</strong> Display of the side panel.
+      In Firefox the side panel is provided through the manifest entry
+      <code>sidebar_action</code>, without a permission of its own.</li>
       <li><strong>favicon (Chrome/Edge only):</strong> Display of the locally
-      cached site icon in previews. Reads the local browser cache only; no
-      network requests are made to the saved websites.</li>
+      cached site icon in previews and on the local page of tabs that have not
+      loaded yet (section 4.9). Reads the local browser cache only; no network
+      requests are made to the saved websites.</li>
+      <li><strong>Host permission https://api.gumroad.com/*:</strong> Used only for
+      the license check (section 4.2). The extension has no access to the
+      content of other websites.</li>
+      <li><strong>commands:</strong> Keyboard shortcuts (manifest entry, not a
+      permission of its own).</li>
     </ul>
 
     <h2>6. Third-Party Disclosure</h2>
     <p>Personal data is disclosed to third parties <strong>exclusively</strong>
-    through license key verification via the Gumroad API (see section 4.2).
+    through the license check via the Gumroad API (see section 4.2).
     No further disclosure takes place.</p>
 
     <h2>7. Your Rights</h2>
@@ -623,9 +1079,9 @@
       </div>
     </div>
     <p>Since session data is stored exclusively on your device, you can view,
-    edit, or delete it at any time directly within the extension
-    (Session Manager → Delete) or by uninstalling the extension.</p>
-    <p>For inquiries about license key processing, contact:
+    edit, or delete it at any time: directly within the extension (in the
+    "Session Manager" with "Delete") or by uninstalling the extension.</p>
+    <p>For inquiries about processing for the license check, contact:
     <a href="mailto:rheysoft@gmail.com">rheysoft@gmail.com</a></p>
 
     <h2>8. Right to Lodge a Complaint</h2>
