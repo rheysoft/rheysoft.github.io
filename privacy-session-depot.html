@@ -188,21 +188,21 @@
       <tr>
         <td>Session-Daten</td>
         <td>Name, Beschreibung, Tags, Tab-URLs, Seitentitel, Tab-Gruppen, Notizen,
-        eingebettete Seitensymbole; auch automatisch angelegte Sessions
+        eingebettete Seitensymbole, Zeitpunkt der Erstellung und der letzten Änderung; auch automatisch angelegte Sessions
         (Abschnitt 4.5)</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
       <tr>
         <td>Arbeitsbereiche (Workspaces)</td>
-        <td>Workspace-Namen, Farben, Zuordnungen (bis zu 2 kostenlos, weitere mit
+        <td>Workspace-Namen, Farben, Zuordnungen, Zeitpunkt der Erstellung (bis zu 2 kostenlos, weitere mit
         Premium)</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
       <tr>
         <td>Leseliste</td>
-        <td>URL, Seitentitel, eingebettetes Seitensymbol, Notiz, Gelesen-Status,
+        <td>URL, Seitentitel, eingebettetes Seitensymbol, Notiz, Gelesen-Status, Zeitpunkt des Hinzufügens,
         Zeitpunkte des Zurückstellens (Abschnitt 4.8)</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
@@ -225,7 +225,7 @@
       <tr>
         <td>Automatisches Backup (Premium, optional)</td>
         <td>Tägliches JSON-Abbild von Sessions, Leseliste, Arbeitsbereichen und
-        Einstellungen, ohne Lizenzdaten (höchstens 5, rotierend)</td>
+        Einstellungen mit Erstellungszeitpunkt, ohne Lizenzdaten (höchstens 5, rotierend)</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
@@ -252,7 +252,7 @@
       <tr>
         <td>Focus-Mode-Zustand</td>
         <td>Tabs der Fenster vor dem Aktivieren (für die Rückkehr), Fenster-IDs,
-        gewählter Arbeitsbereich. Speicherdauer: vom Aktivieren bis zum Beenden
+        gewählter Arbeitsbereich, Zeitpunkt des Aktivierens. Speicherdauer: vom Aktivieren bis zum Beenden
         des Focus Mode, auch über einen Neustart des Browsers hinweg</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
@@ -273,7 +273,7 @@
       </tr>
       <tr>
         <td>Backup- und Export-Dateien</td>
-        <td>Von Ihnen gespeicherte Backups und exportierte Sessions (Abschnitt 4.3)</td>
+        <td>Von Ihnen gespeicherte Backups und exportierte Sessions; Backups und JSON-Exporte jeweils mit Exportzeitpunkt (Abschnitt 4.3)</td>
         <td>Datei an dem von Ihnen gewählten Ort</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
@@ -664,21 +664,21 @@
         <tr>
           <td>Session data</td>
           <td>Name, description, tags, tab URLs, page titles, tab groups, notes,
-          embedded site icons; also automatically created sessions
+          embedded site icons, time of creation and of the last change; also automatically created sessions
           (section 4.5)</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
         <tr>
           <td>Workspaces</td>
-          <td>Workspace names, colors, session assignments (up to 2 free, more with
+          <td>Workspace names, colors, session assignments, time of creation (up to 2 free, more with
           Premium)</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
         <tr>
           <td>Reading list</td>
-          <td>URL, page title, embedded site icon, note, read state, snooze
+          <td>URL, page title, embedded site icon, note, read state, time of adding, snooze
           times (section 4.8)</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
@@ -700,7 +700,7 @@
         <tr>
           <td>Automatic backup (Premium, optional)</td>
           <td>Daily JSON snapshot of sessions, reading list, workspaces and
-          settings, without license data (at most 5, rotating)</td>
+          settings with time of creation, without license data (at most 5, rotating)</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
@@ -725,7 +725,7 @@
         <tr>
           <td>Focus Mode state</td>
           <td>Tabs of the windows before activation (for the return), window IDs,
-          selected workspace. Retention: from activation until Focus Mode is
+          selected workspace, time of activation. Retention: from activation until Focus Mode is
           ended, also across a browser restart</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
@@ -745,7 +745,7 @@
         </tr>
         <tr>
           <td>Backup and export files</td>
-          <td>Backups and exported sessions you save (section 4.3)</td>
+          <td>Backups and exported sessions you save; backups and JSON exports each with the time of export (section 4.3)</td>
           <td>File at the location you choose</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
