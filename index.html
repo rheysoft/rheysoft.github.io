@@ -21,11 +21,6 @@
       line-height: normal;
     }
 
-    .hero-label {
-      font-family: var(--mono); font-size: 0.7rem; color: var(--accent2);
-      letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.5rem;
-    }
-
     h1 {
       font-size: clamp(2rem, 5vw, 3.25rem);
       font-weight: 600; color: #fff; letter-spacing: -0.02em;
@@ -34,29 +29,8 @@
 
     .tagline {
       font-size: 1.1rem; color: var(--text-dim); max-width: 480px;
-      line-height: 1.65; margin-bottom: 2.5rem;
+      line-height: 1.65; margin-bottom: 0;
     }
-
-    .product-tags {
-      display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center;
-      margin-bottom: 3rem;
-    }
-    .tag {
-      font-family: var(--mono); font-size: 0.72rem;
-      padding: 0.3rem 0.75rem; border-radius: 4px;
-      border: 1px solid var(--border); color: var(--text-dim);
-      letter-spacing: 0.05em;
-    }
-
-    /* Contact line */
-    .notice {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 8px; padding: 1.25rem 2rem;
-      font-family: var(--mono); font-size: 0.78rem;
-      color: var(--text-dim); max-width: 420px; line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-    .notice strong { color: var(--accent2); }
 
     @media (max-width: 600px) {
       main { padding: 3rem 1.25rem; }
@@ -77,23 +51,11 @@
 </nav>
 
 <main>
-  <div class="hero-label">rheysoft UG (haftungsbeschränkt)</div>
-
   <h1>rheysoft</h1>
 
   <p class="tagline">
     Browser extensions for Firefox, Chrome and Edge.
   </p>
-
-  <div class="product-tags">
-    <span class="tag">Browser Extensions</span>
-    <span class="tag">Firefox | Edge</span>
-  </div>
-
-  <div class="notice">
-    Contact: <a href="mailto:rheysoft@gmail.com">rheysoft@gmail.com</a>
-  </div>
-
 </main>
 
 <footer>
