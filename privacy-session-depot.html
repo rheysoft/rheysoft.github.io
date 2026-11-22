@@ -186,8 +186,12 @@
     <tbody>
       <tr>
         <td>Session-Daten</td>
-        <td>Name, Beschreibung, Tags, Tab-URLs, Seitentitel, Tab-Gruppen, Notizen,
-        eingebettete Seitensymbole, Zeitpunkt der Erstellung und der letzten Änderung; auch automatisch angelegte Sessions
+        <td>Name, Beschreibung, Tags, Tab-URLs, Seitentitel, Tab-Gruppen (Name und
+        Farbe), Notizen, eingebettete Seitensymbole, je Tab die Angabe, ob er
+        angeheftet oder aktiv ist, Sperr-Kennzeichen, Anzahl der beim Speichern
+        übersprungenen Tabs mit Browser-internen Adressen, Zeitpunkt der Erstellung
+        und der letzten Änderung; auch automatisch angelegte Sessions mit der
+        Angabe, ob sie automatisch entstanden sind und auf welchem Weg
         (Abschnitt 4.5)</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
@@ -208,8 +212,12 @@
       </tr>
       <tr>
         <td>Einstellungen</td>
-        <td>Theme (auch eigene Farben), Sprache, Auto-Save- und Backup-Konfiguration (einschließlich des Zeitpunkts der letzten automatischen Sicherung),
-        Wiederherstellungs-Modus, Focus-Mode-Optionen</td>
+        <td>Theme (auch eigene Farben), Konfiguration des täglichen Backups,
+        Wiederherstellungs-Modus, Focus-Mode-Optionen, Voreinstellung für das
+        Gruppieren nach Domain, ob die Leiste der Arbeitsbereiche im "Session
+        Manager" eingeklappt ist. Getrennt davon die Auto-Save-Konfiguration
+        (einschließlich des Zeitpunkts der letzten automatischen Sicherung); sie ist
+        nicht Teil von Backups</td>
         <td>Lokal auf Ihrem Gerät</td>
         <td><span class="tag local">Nur lokal</span></td>
       </tr>
@@ -258,7 +266,8 @@
       </tr>
       <tr>
         <td>Fenster-Zwischenspeicher</td>
-        <td>Tab-Titel, Tab-Adressen, Tab-Gruppen und eingebettete Seitensymbole der
+        <td>Tab-Titel, Tab-Adressen, Tab-Gruppen (Name und Farbe), eingebettete
+        Seitensymbole und die Angabe, ob ein Tab angeheftet oder aktiv ist, der
         offenen normalen Fenster; Fenstertyp und Privat-Kennzeichen
         (Abschnitt 4.6)</td>
         <td>Sitzungsspeicher des Browsers, beim Beenden geleert</td>
@@ -324,6 +333,10 @@
   <p>Wie bei jeder HTTPS-Anfrage erhält Gumroad außerdem Ihre IP-Adresse und die
   üblichen technischen Verbindungsdaten, zum Beispiel den Zeitpunkt der Anfrage
   und übliche HTTP-Header.</p>
+  <p>Der Browser fügt der Anfrage außerdem einen Origin-Header hinzu, der die
+  Extension kennzeichnet. In Firefox enthält er eine Kennung, die für Ihre
+  Installation der Extension eindeutig ist. Die Extension kann diesen Header
+  nicht unterdrücken; sie erzeugt und speichert die Kennung nicht.</p>
   <p>Gumroad antwortet mit dem Prüfergebnis und Angaben zum Kauf. Davon speichert
   die Extension lokal: den Lizenzschlüssel, ob und wann er zuletzt erfolgreich
   geprüft wurde, und ob der Kauf erstattet oder zurückgebucht wurde. Bei einem
@@ -342,7 +355,8 @@
     <li>Empfänger: Gumroad, Inc., USA</li>
     <li>Übermittelte Daten: Lizenzschlüssel, Produkt-ID, Angabe zum
     Aktivierungszähler (verschlüsselt per HTTPS); technisch bedingt die
-    IP-Adresse und die üblichen Verbindungsdaten einer HTTPS-Anfrage</li>
+    IP-Adresse, die üblichen Verbindungsdaten einer HTTPS-Anfrage und der
+    Origin-Header des Browsers</li>
     <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des
     Lizenzvertrags: Aktivierung, laufende Prüfung, Prüfung auf Erstattung und
     Rückbuchung, Begrenzung auf 3 Geräte)</li>
@@ -439,7 +453,8 @@
   <p>Damit ein geschlossenes Fenster auch dann gespeichert werden kann, wenn der
   Browser den Hintergrundprozess der Extension zwischenzeitlich beendet hat,
   hält die Extension die Titel und Adressen der Tabs der offenen normalen
-  Fenster (mit Tab-Gruppen und eingebetteten Seitensymbolen) im Sitzungsspeicher
+  Fenster (mit Tab-Gruppen, eingebetteten Seitensymbolen und der Angabe, ob ein
+  Tab angeheftet oder aktiv ist) im Sitzungsspeicher
   des Browsers
   (<code>chrome.storage.session</code>) vor. Das geschieht unabhängig davon, ob
   das Speichern beim Schließen eingeschaltet ist. Private Fenster und
@@ -506,9 +521,10 @@
   <h2>5. Zugriffsberechtigungen der Extension</h2>
   <p>Session Depot fordert folgende Browser-Berechtigungen an:</p>
   <ul>
-    <li><strong>tabs:</strong> Lesen von URL und Titel geöffneter Tabs für die
-    Session-Speicherung, das Öffnen, Entladen und Schließen von Tabs beim
-    Wiederherstellen und im Focus Mode. Neben Ihren Aktionen nutzen auch die
+    <li><strong>tabs:</strong> Lesen von URL, Titel und Adresse des Seitensymbols
+    geöffneter Tabs (bei einem noch ladenden Tab auch der Zieladresse, die der
+    Browser meldet) für die Session-Speicherung; Öffnen, Entladen und Schließen
+    von Tabs beim Wiederherstellen und im Focus Mode. Neben Ihren Aktionen nutzen auch die
     automatischen Funktionen diese Berechtigung: der Wiederherstellungs-Snapshot,
     der Intervall-Auto-Save und der Fenster-Zwischenspeicher, der bei Änderungen
     an Tabs oder Fenstern aktualisiert wird (Abschnitte 4.5 und 4.6).</li>
@@ -672,9 +688,12 @@
       <tbody>
         <tr>
           <td>Session data</td>
-          <td>Name, description, tags, tab URLs, page titles, tab groups, notes,
-          embedded site icons, time of creation and of the last change; also automatically created sessions
-          (section 4.5)</td>
+          <td>Name, description, tags, tab URLs, page titles, tab groups (name and
+          color), notes, embedded site icons, whether each tab is pinned or active,
+          lock flag, number of tabs with browser-internal addresses skipped when
+          saving, time of creation and of the last change; also automatically
+          created sessions, with whether a session was created automatically and
+          by which path (section 4.5)</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
@@ -694,8 +713,11 @@
         </tr>
         <tr>
           <td>Settings</td>
-          <td>Theme (including custom colors), language, auto-save and backup
-          configuration (including the time of the last automatic save), restore mode, Focus Mode options</td>
+          <td>Theme (including custom colors), daily backup configuration, restore
+          mode, Focus Mode options, default for grouping by domain, whether the
+          workspace sidebar in the "Session Manager" is collapsed. Kept separately:
+          the auto-save configuration (including the time of the last automatic
+          save); it is not part of backups</td>
           <td>Local device only</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
@@ -741,8 +763,9 @@
         </tr>
         <tr>
           <td>Window cache</td>
-          <td>Tab titles, tab addresses, tab groups and embedded site icons of the
-          open normal windows; window type and private flag (section 4.6)</td>
+          <td>Tab titles, tab addresses, tab groups (name and color), embedded site
+          icons and whether a tab is pinned or active, of the open normal windows;
+          window type and private flag (section 4.6)</td>
           <td>Browser session storage, cleared on exit</td>
           <td><span class="tag local">Local only</span></td>
         </tr>
@@ -801,6 +824,10 @@
     <p>As with every HTTPS request, Gumroad also receives your IP address and the
     usual technical connection data, for example the time of the request and
     standard HTTP headers.</p>
+    <p>The browser also adds an Origin header to the request that identifies the
+    extension. In Firefox it contains an identifier that is unique to your
+    installation of the extension. The extension cannot suppress this header; it
+    does not create or store the identifier.</p>
     <p>Gumroad replies with the verification result and details of the purchase.
     Of these, the extension stores locally: the license key, whether and when it
     was last verified successfully, and whether the purchase was refunded or
@@ -817,8 +844,8 @@
     <ul>
       <li>Recipient: Gumroad, Inc., USA</li>
       <li>Data transmitted: License key, product ID, activation counter flag
-      (encrypted via HTTPS); for technical reasons the IP address and the usual
-      connection data of an HTTPS request</li>
+      (encrypted via HTTPS); for technical reasons the IP address, the usual
+      connection data of an HTTPS request and the browser's Origin header</li>
       <li>Legal basis: Art. 6(1)(b) GDPR (performance of the license contract:
       activation, ongoing verification, check for refunds and chargebacks, limit of
       3 devices)</li>
@@ -908,7 +935,8 @@
     <p>So that a closed window can still be saved after the browser has stopped
     the extension's background process in the meantime, the extension keeps the
     titles and addresses of the tabs of the open normal windows (with tab
-    groups and embedded site icons) in the browser's session storage
+    groups, embedded site icons and whether a tab is pinned or active) in the
+    browser's session storage
     (<code>chrome.storage.session</code>).
     This happens regardless of whether save on window close is switched on.
     Private windows and popup windows appear there only as empty entries with
@@ -970,8 +998,10 @@
     <h2>5. Extension Permissions</h2>
     <p>Session Depot requests the following browser permissions:</p>
     <ul>
-      <li><strong>tabs:</strong> Read URL and title of open tabs for session
-      saving, and open, unload and close tabs when restoring and in Focus Mode.
+      <li><strong>tabs:</strong> Read the URL, title and site icon address of open
+      tabs (for a tab that is still loading, also the target address the browser
+      reports) for session saving; open, unload and close tabs when restoring and
+      in Focus Mode.
       Besides your actions, the automatic functions also use this permission: the
       recovery snapshot, the interval auto-save and the window cache, which is
       updated when tabs or windows change (sections 4.5 and 4.6).</li>
