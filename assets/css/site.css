@@ -193,7 +193,7 @@ footer .sep { margin: 0 0.6em; color: var(--text-dim); }
   .nav-links { gap: 0.75rem; }
   .nav-links a { font-size: 0.7rem; letter-spacing: 0.02em; }
 }
-/* Below 360 px the decided values do not fit in one row: smallest deviation */
+/* Below 360 px the navigation does not fit in one row: less padding, a smaller logo and smaller gaps */
 @media (max-width: 359.98px) {
   .site-nav { padding: 0 0.75rem; }
   .nav-brand img { height: 24px; }
